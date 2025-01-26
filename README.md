@@ -1,6 +1,6 @@
 # Portfolio Management Application: PortfolioPro
 
-## General (6 points)
+## General 
 
 ### Problem Statement
 The financial market is highly fragmented, with various data sources for stocks, cryptocurrencies, and other assets. Currently, there is no unified system for managing a comprehensive asset portfolio. This project aims to provide a single platform that integrates multiple financial data sources, offers portfolio management capabilities, and visualizes financial insights. It is highly relevant for individual investors and financial advisors, addressing challenges in tracking and analyzing multiple financial markets in one place.
@@ -29,7 +29,7 @@ Competitors include platforms like Robinhood, Binance, and Personal Capital. Unl
 
 ---
 
-## Implementation (12 points)
+## Implementation 
 
 ### Front-end Design and Implementation
 1. **Design**:
@@ -200,7 +200,7 @@ frontend/
 
 ---
 
-## Misc Software Engineering Aspects (3 points)
+## Misc Software Engineering Aspects
 
 ### Documentation
 - Figma design references.
@@ -221,7 +221,7 @@ frontend/
 
 ---
 
-## Novel Features (10 points)
+## Novel Features 
 
 ### Front-end
 - Chatbot interface with real-time loading animations.
@@ -243,8 +243,7 @@ frontend/
 
 ---
 
-## Presentation (4 points)
-
+## Presentation 
 The final presentation provides an in-depth demonstration of the application, its architecture, and features. 
 [Presentation Video](https://drive.google.com/file/d/12XFp24IKUtWnYLGIpI6ZZLmiYCLG5KHb/view?usp=sharing) .
 
