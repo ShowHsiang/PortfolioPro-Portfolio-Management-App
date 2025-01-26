@@ -1,0 +1,26 @@
+/* NewsFeed.module.css */
+.newsfeedContainer {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  align-items: center; /* center the content */
+}
+
+.newsItem {
+  width: 100%; /* take up the full width of the parent container */
+  max-width: 1000px; /* set the maximum width, ensuring the content doesn't stretch too wide */
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.selectBox {
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 20px;
+}

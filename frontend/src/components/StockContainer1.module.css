@@ -1,0 +1,412 @@
+.nvidia1Icon {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.nvidia {
+  text-decoration: none;
+  position: relative;
+  color: inherit;
+}
+.nvidiaHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 var(--padding-10xs) 0 0;
+  gap: var(--gap-7xs);
+}
+.nVD,
+.nvda {
+  position: relative;
+  text-transform: uppercase;
+  display: inline-block;
+}
+.nvda {
+  text-decoration: none;
+  width: 26px;
+  color: inherit;
+}
+.nVD {
+  width: 29px;
+  color: var(--color-yellowgreen);
+}
+.nvidiaSymbol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 0 0 var(--padding-8xs);
+  text-align: right;
+}
+.nvidiaDetails {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+}
+.currentValue1,
+.value {
+  position: relative;
+  text-transform: capitalize;
+}
+.value {
+  text-decoration: none;
+  font-size: var(--font-size-lg);
+  color: var(--color-gray-800);
+}
+.currentValue {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+}
+.nvidiaValueChild {
+  height: 24px;
+  width: 78px;
+  position: relative;
+}
+.nvidiaInfo,
+.nvidiaValue {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+.nvidiaValue {
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 var(--padding-7xs);
+  gap: var(--gap-xl);
+  color: var(--color-gray-700);
+}
+.nvidiaInfo {
+  border-radius: var(--br-5xs);
+  background-color: var(--color-paleturquoise-100);
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--padding-sm) var(--padding-xs);
+  gap: var(--gap-base);
+}
+.company,
+.nvidiaStock {
+  display: flex;
+  justify-content: flex-start;
+}
+.nvidiaStock {
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-11xs) 0 0;
+  box-sizing: border-box;
+  min-width: 136px;
+}
+.company {
+  flex-direction: row;
+  align-items: center;
+  padding: 0 var(--padding-6xs) 0 0;
+  gap: var(--gap-7xs);
+}
+.separator {
+  align-self: stretch;
+  position: relative;
+  text-transform: uppercase;
+  color: var(--color-red-300);
+}
+.symbol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 0 0 var(--padding-5xs);
+  text-align: right;
+}
+.separator1 {
+  text-decoration: none;
+  position: relative;
+  font-size: var(--font-size-lg);
+  text-transform: capitalize;
+  color: var(--color-white);
+  display: inline-block;
+  min-width: 61px;
+}
+.stockHeader,
+.value1 {
+  display: flex;
+  align-items: center;
+}
+.value1 {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 var(--padding-7xs);
+  gap: var(--gap-xl);
+  color: var(--color-gray-1400);
+}
+.stockHeader {
+  flex: 0.8852;
+  border-radius: var(--br-5xs);
+  background-color: var(--color-mediumpurple);
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--padding-base) var(--padding-xs);
+  box-sizing: border-box;
+  gap: var(--gap-base);
+  min-width: 136px;
+  color: var(--color-white);
+}
+.pxAppleLogoBlack1Icon,
+.pxAppleLogoBlack2Icon {
+  position: absolute;
+  top: 0;
+  left: 3px;
+  width: 19px;
+  height: 24px;
+  object-fit: cover;
+}
+.pxAppleLogoBlack2Icon {
+  display: none;
+  mix-blend-mode: screen;
+}
+.appleInc {
+  text-decoration: none;
+  position: relative;
+  color: inherit;
+  display: inline-block;
+  min-width: 42px;
+}
+.frameGroup {
+  width: 62px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  box-sizing: border-box;
+  gap: var(--gap-7xs);
+}
+.aapl,
+.div {
+  position: relative;
+  text-transform: uppercase;
+  display: inline-block;
+}
+.aapl {
+  text-decoration: none;
+  width: 24px;
+  color: inherit;
+}
+.div {
+  width: 34px;
+  color: var(--color-yellowgreen);
+}
+.aaplParent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: right;
+}
+.frameChild {
+  height: 24px;
+  width: 78px;
+  position: relative;
+  object-fit: contain;
+}
+.stockHeader1 {
+  flex: 0.8852;
+  border-radius: var(--br-5xs);
+  background-color: var(--color-lightgreen);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-base) var(--padding-xs);
+  box-sizing: border-box;
+  gap: var(--gap-base);
+  min-width: 136px;
+}
+.amdLogo11Icon {
+  height: 32px;
+  width: 32px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.advancedMicroDevices {
+  width: 94px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.amdHeader,
+.amdTitle {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.amdTitle {
+  flex-direction: column;
+  padding: var(--padding-6xs) 0 0;
+}
+.amdHeader {
+  flex-direction: row;
+  gap: var(--gap-7xs);
+}
+.aMD,
+.amd {
+  position: relative;
+  text-transform: uppercase;
+  display: inline-block;
+}
+.amd {
+  text-decoration: none;
+  width: 21px;
+  color: inherit;
+}
+.aMD {
+  width: 25px;
+  color: var(--color-crimson);
+}
+.amdDetails,
+.amdSymbol,
+.amdTicker {
+  display: flex;
+  justify-content: flex-start;
+}
+.amdTicker {
+  flex-direction: column;
+  align-items: flex-end;
+}
+.amdDetails,
+.amdSymbol {
+  align-items: flex-start;
+}
+.amdSymbol {
+  flex-direction: column;
+  padding: var(--padding-12xs) 0 0;
+  text-align: right;
+}
+.amdDetails {
+  flex-direction: row;
+  gap: var(--gap-11xl);
+}
+.value2 {
+  text-decoration: none;
+  position: relative;
+  font-size: var(--font-size-lg);
+  text-transform: capitalize;
+  color: var(--color-gray-800);
+  display: inline-block;
+  min-width: 50px;
+}
+.indicator {
+  height: 141px;
+  width: 116px;
+  position: absolute;
+  margin: 0 !important;
+  top: -69px;
+  left: 73px;
+  background: linear-gradient(183.17deg, #fff, rgba(255, 255, 255, 0));
+  transform: rotate(90deg);
+  transform-origin: 0 0;
+  z-index: 1;
+}
+.value3,
+.valueWrapper {
+  justify-content: flex-start;
+}
+.value3 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  position: relative;
+}
+.valueWrapper {
+  flex-direction: column;
+  padding: var(--padding-4xs) 0 0;
+}
+.amdInfo,
+.amdStock,
+.amdValue,
+.valueWrapper {
+  display: flex;
+  align-items: flex-start;
+}
+.amdValue {
+  width: 173px;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+  color: var(--color-gray-700);
+}
+.amdInfo,
+.amdStock {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.amdInfo {
+  align-self: stretch;
+  border-radius: var(--br-5xs) 0 0 var(--br-5xs);
+  background-color: var(--color-violet);
+  overflow: hidden;
+  padding: var(--padding-base) 0 var(--padding-base) var(--padding-xs);
+  gap: var(--gap-xs);
+}
+.amdStock {
+  width: 180px;
+  padding: var(--padding-12xs) 0 0;
+  box-sizing: border-box;
+}
+.navigation,
+.stockContainer {
+  border-radius: var(--br-5xs);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.navigation {
+  margin: 0 !important;
+  position: absolute;
+  top: 48px;
+  right: -23px;
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.12);
+  background-color: var(--color-blue);
+  align-items: center;
+  padding: var(--padding-3xs);
+  z-index: 2;
+}
+.stockContainer {
+  width: 843px;
+  background-color: var(--color-white);
+  align-items: flex-start;
+  padding: var(--padding-xs) 0 var(--padding-xs) var(--padding-xs);
+  box-sizing: border-box;
+  position: relative;
+  gap: var(--gap-5xs);
+  flex-shrink: 0;
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-800);
+  font-family: var(--font-abel);
+}
+@media screen and (max-width: 750px) {
+  .stockContainer {
+    flex-wrap: wrap;
+    padding-right: var(--padding-xs);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .stockHeader,
+  .stockHeader1 {
+    flex: 1;
+  }
+}

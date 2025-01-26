@@ -1,0 +1,999 @@
+.topStock {
+  width: 70px;
+  position: relative;
+  text-transform: capitalize;
+  display: inline-block;
+}
+.stocks1 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+}
+.topStockContainer {
+  width: 316px;
+  margin: 0 !important;
+  position: absolute;
+  top: 218px;
+  left: 12px;
+  flex-direction: row;
+  z-index: 0;
+}
+.stockContainer,
+.stockDetails,
+.topStockContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.stockDetails {
+  flex: 1;
+  flex-direction: column;
+}
+.stockContainer {
+  width: 316px;
+  height: 62px;
+  top: 371px;
+  left: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  flex-direction: row;
+  z-index: 1;
+}
+.divider,
+.emptyContainerIcon,
+.stockContainer {
+  margin: 0 !important;
+  position: absolute;
+}
+.divider {
+  width: calc(100% - 24px);
+  height: 50px;
+  right: 12px;
+  bottom: 0;
+  left: 12px;
+  background: linear-gradient(180deg, #fff, rgba(255, 255, 255, 0));
+  z-index: 2;
+}
+.emptyContainerIcon {
+  width: 44px;
+  height: 44px;
+  bottom: 16px;
+  left: calc(50% - 22px);
+  border-radius: var(--br-5xs);
+  object-fit: contain;
+  z-index: 3;
+}
+.topStocks {
+  height: 436px;
+  flex: 1;
+  border-radius: var(--br-5xs);
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-xl) var(--padding-xs);
+  box-sizing: border-box;
+  gap: var(--gap-xl);
+  max-width: 100%;
+}
+.nasdaq,
+.topStocks {
+  position: relative;
+}
+.nasdaqLabel {
+  border-radius: var(--br-5xs);
+  background-color: var(--color-blue);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-7xs) var(--padding-8xs) var(--padding-7xs)
+    var(--padding-7xs);
+  color: var(--color-white);
+}
+.sse {
+  flex: 1;
+  position: relative;
+  display: inline-block;
+  min-width: 25px;
+}
+.sSELabel {
+  text-align: center;
+}
+.euronextLabel,
+.sSELabel,
+.snapshotLabel {
+  border-radius: var(--br-5xs);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-7xs) var(--padding-8xs) var(--padding-7xs)
+    var(--padding-7xs);
+}
+.snapshotLabel {
+  background-color: var(--color-white);
+  overflow-x: auto;
+  padding: 0 var(--padding-5xs) 0 0;
+  gap: var(--gap-xs);
+}
+.d {
+  width: 29px;
+  position: relative;
+  display: inline-block;
+}
+.snapshotDataValues {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-12xs) 0 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-blue);
+}
+.snapshotDataRowChild {
+  height: 21px;
+  width: 1px;
+  position: relative;
+  border-right: 1px solid var(--color-gray-1500);
+  box-sizing: border-box;
+}
+.dWrapper,
+.snapshotDataRow,
+.snapshotTitleRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.dWrapper {
+  flex: 1;
+  flex-direction: column;
+  padding: var(--padding-10xs-5) 0 0;
+}
+.snapshotDataRow,
+.snapshotTitleRow {
+  align-self: stretch;
+  gap: var(--gap-xl);
+}
+.snapshotDataRow {
+  flex-direction: row;
+  text-align: center;
+}
+.snapshotTitleRow {
+  flex-direction: column;
+  padding: 0 var(--padding-base) 0 0;
+}
+.tradeTimeDivider {
+  width: 28px;
+  height: 1px;
+  position: absolute;
+  margin: 0 !important;
+  top: 85px;
+  left: 12px;
+  border-top: 1px solid var(--color-blue);
+  box-sizing: border-box;
+}
+.div,
+.div2 {
+  position: relative;
+  display: inline-block;
+}
+.div {
+  width: 35px;
+  text-align: center;
+}
+.div2 {
+  min-width: 35px;
+}
+.timeValueSlots {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-xl) 0 0;
+  gap: var(--gap-13xl);
+}
+.high,
+.highData {
+  position: relative;
+  text-transform: capitalize;
+}
+.high {
+  align-self: stretch;
+}
+.highData {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-800);
+  display: inline-block;
+  min-width: 57px;
+}
+.highValue {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+}
+.lowData {
+  position: relative;
+  font-size: var(--font-size-sm);
+  text-transform: capitalize;
+  color: var(--color-gray-800);
+}
+.highLowValues,
+.tradeValues {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.highLowValues {
+  align-self: stretch;
+  gap: var(--gap-lgi);
+}
+.tradeValues {
+  width: 70px;
+  gap: 48px;
+}
+.frameChild {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.am,
+.am1 {
+  position: relative;
+  display: inline-block;
+  min-width: 31px;
+}
+.am1 {
+  flex: 1;
+}
+.averageValue {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-10xs) 0 var(--padding-9xs);
+  text-align: center;
+}
+.prevCloseAvr {
+  position: relative;
+  text-transform: capitalize;
+  display: inline-block;
+  min-width: 114px;
+}
+.prevCloseAverage {
+  gap: var(--gap-9xs);
+}
+.averageValueParent,
+.openParent,
+.prevCloseAverage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.openParent {
+  width: 70px;
+  gap: var(--gap-9xs);
+}
+.averageValueParent {
+  flex: 1;
+  gap: var(--gap-3xl);
+}
+.pm {
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  min-width: 30px;
+  margin-left: -1px;
+}
+.amParent,
+.frameGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.frameGroup {
+  width: 141px;
+  justify-content: flex-start;
+  text-align: left;
+}
+.amParent {
+  align-self: stretch;
+  justify-content: space-between;
+  padding: 0 var(--padding-4xs) 0 0;
+  gap: var(--gap-xl);
+}
+.frameParent,
+.snapshotHeader,
+.tradeValuesParent {
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+.frameParent {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-2xs);
+  margin-left: -8px;
+  text-align: center;
+}
+.snapshotHeader,
+.tradeValuesParent {
+  flex-direction: row;
+  align-items: flex-end;
+}
+.snapshotHeader {
+  border-radius: var(--br-5xs);
+  background-color: var(--color-white);
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-xl) var(--padding-xs) var(--padding-lgi);
+  box-sizing: border-box;
+  position: relative;
+  gap: var(--gap-xl);
+  max-width: 100%;
+}
+.snapshot {
+  width: 52px;
+  text-align: center;
+}
+.prevClose,
+.prevCloseData,
+.snapshot {
+  position: relative;
+  display: inline-block;
+}
+.prevClose {
+  width: 71px;
+  text-transform: capitalize;
+}
+.prevCloseData {
+  font-size: var(--font-size-xl);
+  color: var(--color-gray-800);
+  min-width: 80px;
+}
+.prevCloseValue {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 0 var(--padding-8xs);
+}
+.dayLow,
+.dayLowValue {
+  position: relative;
+  text-transform: capitalize;
+}
+.dayLowValue {
+  display: inline-block;
+  min-width: 57px;
+}
+.dayLow {
+  align-self: stretch;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-700);
+}
+.dayLowRow,
+.prevCloseRow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.dayLowRow {
+  align-self: stretch;
+  padding: 0 var(--padding-sm) 0 0;
+  gap: var(--gap-9xs);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-800);
+}
+.prevCloseRow {
+  gap: var(--gap-20xl);
+}
+.openDataValue {
+  position: relative;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray-800);
+}
+.openGroup,
+.openValue {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.openGroup {
+  flex-direction: column;
+  padding: 0 var(--padding-xl) 0 0;
+  gap: var(--gap-9xs);
+}
+.openValue {
+  align-self: stretch;
+  flex-direction: row;
+}
+.dayHigh,
+.dayHighValue {
+  position: relative;
+  text-transform: capitalize;
+  display: inline-block;
+}
+.dayHighValue {
+  align-self: stretch;
+  min-width: 57px;
+}
+.dayHigh {
+  width: 41px;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-700);
+}
+.dayHighRow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0 0 0 var(--padding-xl);
+  gap: var(--gap-9xs);
+  text-align: right;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-800);
+}
+.dayRangeDivider,
+.verticalDivider {
+  position: absolute;
+  margin: 0 !important;
+}
+.dayRangeDivider {
+  width: 3px;
+  height: 17px;
+  bottom: -15px;
+  left: 48.5px;
+  border-radius: var(--br-11xs);
+  background-color: var(--color-gray-800);
+  z-index: 1;
+}
+.verticalDivider {
+  width: 317px;
+  height: 1px;
+  bottom: 56px;
+  left: -180.5px;
+  border-top: 1px solid var(--color-lavender-200);
+  box-sizing: border-box;
+}
+.openRow {
+  width: 132.5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  position: relative;
+  gap: var(--gap-20xl);
+}
+.prevCloseRowParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 var(--padding-10xs) 0 0;
+  gap: var(--gap-xl);
+}
+.dataDivider {
+  align-self: stretch;
+  height: 4px;
+  border-radius: var(--br-12xs);
+  background-color: var(--color-violet);
+}
+.dataDivider,
+.dayDividerLabel {
+  position: relative;
+}
+.dayDividerLabelWrapper,
+.frameContainer {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+}
+.dayDividerLabelWrapper {
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0 51px;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray-800);
+}
+.frameContainer {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--gap-5xs);
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-700);
+}
+.weekLow,
+.weekLowValue {
+  position: relative;
+  text-transform: capitalize;
+}
+.weekLow {
+  flex: 1;
+}
+.weekLowMarker {
+  height: 17px;
+  width: 3px;
+  position: absolute;
+  margin: 0 !important;
+  right: 1px;
+  bottom: -12px;
+  border-radius: var(--br-11xs);
+  background-color: var(--color-gray-800);
+  z-index: 1;
+}
+.weekLowParent,
+.weekLowRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.weekLowParent {
+  align-self: stretch;
+  flex-direction: row;
+  position: relative;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-700);
+}
+.weekLowRow {
+  width: 103px;
+  flex-direction: column;
+  gap: var(--gap-9xs);
+}
+.weekHighValue {
+  width: 76px;
+  position: relative;
+  text-transform: capitalize;
+  display: inline-block;
+}
+.weekHighRow {
+  width: 95px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+  text-align: right;
+}
+.weekValues {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+}
+.snapshotParent,
+.tradeTimeRow,
+.weeklyDataRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.tradeTimeRow {
+  flex-direction: row;
+  padding: 0 var(--padding-40xl) 0 60px;
+  font-size: var(--font-size-xl);
+}
+.snapshotParent,
+.weeklyDataRow {
+  align-self: stretch;
+  flex-direction: column;
+  gap: var(--gap-5xs);
+}
+.snapshotParent {
+  gap: var(--gap-mid);
+}
+.tradeDateValue {
+  position: relative;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray-800);
+  display: inline-block;
+  min-width: 78px;
+}
+.timeValues,
+.timeValuesWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.timeValues {
+  flex: 1;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+}
+.timeValuesWrapper {
+  width: 264.5px;
+  justify-content: flex-start;
+  padding: 0 var(--padding-4xs);
+  box-sizing: border-box;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-700);
+}
+.snapshotHeaderChild {
+  width: 317px;
+  height: 1px;
+  position: absolute;
+  margin: 0 !important;
+  bottom: 93px;
+  left: calc(50% - 158px);
+  border-top: 1px solid var(--color-lavender-200);
+  box-sizing: border-box;
+}
+.snapshotContainer,
+.snapshotHeader1 {
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.snapshotHeader1 {
+  border-radius: var(--br-5xs);
+  background-color: var(--color-white);
+  flex-direction: column;
+  padding: var(--padding-xl) var(--padding-xs) var(--padding-8xl);
+  box-sizing: border-box;
+  position: relative;
+  gap: var(--gap-20xl);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-800);
+}
+.snapshotContainer {
+  flex-direction: row;
+  gap: var(--gap-xl);
+}
+.watchlist {
+  width: 53px;
+  position: relative;
+  display: inline-block;
+}
+.companyInformation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-10xs) 0 0;
+}
+.amazoncomInc,
+.amzn {
+  margin: 0;
+}
+.amzn {
+  color: var(--color-gray-700);
+}
+.companyNames {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-xl) 0 0;
+}
+.firstIndicator,
+.indicators {
+  width: 41px;
+  position: relative;
+  text-transform: uppercase;
+  display: inline-block;
+}
+.indicators {
+  width: 29px;
+  color: var(--color-yellowgreen);
+}
+.performanceIndicators {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  text-align: right;
+}
+.companies,
+.dividers {
+  position: absolute;
+  left: 0;
+}
+.companies {
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-7xs);
+}
+.dividers {
+  top: 46px;
+  border-top: 1px solid var(--color-lavender-200);
+  box-sizing: border-box;
+  width: 317px;
+  height: 1px;
+}
+.companiesParent {
+  align-self: stretch;
+  height: 47px;
+  position: relative;
+}
+.cocaCola61Icon {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  border-radius: var(--br-9xs);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.div4 {
+  width: 34px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+.bmw1Icon,
+.div4,
+.div5 {
+  position: relative;
+}
+.div5 {
+  width: 29px;
+  text-transform: uppercase;
+  color: var(--color-crimson);
+  display: inline-block;
+}
+.bmw1Icon {
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.div7,
+.div8 {
+  position: relative;
+  text-transform: uppercase;
+  display: inline-block;
+}
+.div7 {
+  width: 29px;
+  color: var(--color-yellowgreen);
+  z-index: 1;
+}
+.div8 {
+  width: 40px;
+}
+.watchlistItem {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-mini);
+}
+.div12 {
+  width: 29px;
+  position: relative;
+  text-transform: uppercase;
+  color: var(--color-crimson);
+  display: inline-block;
+  z-index: 1;
+}
+.watchlistItem1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-7xs);
+}
+.separator {
+  align-self: stretch;
+  height: 1px;
+  position: relative;
+  border-top: 1px solid var(--color-lavender-200);
+  box-sizing: border-box;
+}
+.background {
+  width: 100%;
+  height: 62px;
+  position: absolute;
+  margin: 0 !important;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), #fff 43.54%);
+  z-index: 2;
+}
+.watchlistItems {
+  align-self: stretch;
+  height: 379px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 var(--padding-4xl);
+  box-sizing: border-box;
+  position: relative;
+  gap: 15.7px;
+  text-align: left;
+  font-size: var(--font-size-xs);
+}
+.emptyContainerIcon1 {
+  width: 44px;
+  height: 44px;
+  margin: 0 !important;
+  position: absolute;
+  bottom: 12px;
+  left: calc(50% - 22px);
+  border-radius: 34px;
+  object-fit: contain;
+  z-index: 3;
+}
+.plusIcon {
+  height: 13.1px;
+  width: 13.1px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.addButtonContainer {
+  width: 24px;
+  margin: 0 !important;
+  position: absolute;
+  top: 17px;
+  right: 11.5px;
+  border-radius: 4.4px;
+  background-color: var(--color-blue);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 5.5px var(--padding-8xs);
+  box-sizing: border-box;
+}
+.marketSnapshot,
+.stocks,
+.watchlistParent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-xl);
+  max-width: 100%;
+}
+.watchlistParent {
+  width: 340px;
+  height: 436px;
+  border-radius: var(--br-5xs);
+  background-color: var(--color-white);
+  padding: var(--padding-xl) var(--padding-xs) 398px;
+  box-sizing: border-box;
+  position: relative;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-800);
+}
+.marketSnapshot,
+.stocks {
+  align-self: stretch;
+  height: 892px;
+  flex-shrink: 0;
+}
+.stocks {
+  height: 1002px;
+  overflow-y: auto;
+  padding: 0 0 858px;
+  box-sizing: border-box;
+  text-align: left;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-700);
+  font-family: var(--font-abel);
+}
+.myStocks {
+  text-decoration: none;
+  position: absolute;
+  margin: 0 !important;
+  top: 16px;
+  left: 6px;
+  color: inherit;
+  display: inline-block;
+  min-width: 56px;
+}
+.desktop2,
+.stockList {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.stockList {
+  width: 1060px;
+  flex-direction: column;
+  padding: var(--padding-22xl) 0 0;
+  box-sizing: border-box;
+  max-width: 100%;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-800);
+  font-family: var(--font-abel);
+}
+.desktop2 {
+  width: 100%;
+  background-color: var(--color-whitesmoke);
+  overflow: hidden;
+  flex-direction: row;
+  gap: var(--gap-xl);
+  line-height: normal;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 1275px) {
+  .stocks {
+    padding-bottom: 558px;
+    box-sizing: border-box;
+  }
+  .desktop2 {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .snapshotContainer {
+    flex-wrap: wrap;
+  }
+  .watchlistParent {
+    padding-bottom: 259px;
+    box-sizing: border-box;
+  }
+  .stockList {
+    padding-top: var(--padding-8xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 750px) {
+  .stocks {
+    height: auto;
+    padding-bottom: 363px;
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .dayDividerLabel,
+  .openDataValue,
+  .prevCloseData,
+  .tradeDateValue {
+    font-size: var(--font-size-base);
+  }
+  .snapshotHeader1 {
+    gap: var(--gap-lgi);
+    padding-bottom: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  .watchlistParent {
+    padding-bottom: 168px;
+  }
+  .stockList,
+  .stocks,
+  .watchlistParent {
+    box-sizing: border-box;
+  }
+  .stocks {
+    padding-bottom: 236px;
+  }
+  .stockList {
+    padding-top: var(--padding-xl);
+  }
+}

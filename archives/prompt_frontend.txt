@@ -1,0 +1,1584 @@
+路径: ../frontend/Dockerfile
+代码内容:
+FROM node:16
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+CMD ["npm", "start"] 
+
+路径: ../frontend/package.json
+代码内容:
+{
+  "name": "portfolio-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.13.0",
+    "@mui/icons-material": "^5.13.0",
+    "@mui/x-data-grid": "^6.0.1",
+    "axios": "^1.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.1",
+    "react-scripts": "5.0.1",
+    "redux": "^4.1.2",
+    "react-redux": "^7.2.6",
+    "redux-thunk": "^2.3.0",
+    "redux-devtools-extension": "^2.13.9",
+    "web-vitals": "^3.0.0",
+    "recharts": "^2.11.0",
+    "react-chartjs-2": "^4.0.0",
+    "chart.js": "^3.0.0",
+    "react-markdown": "^8.0.3",
+    "remark-gfm": "^3.0.1",
+    "react-apexcharts": "^1.3.9"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+} 
+
+路径: ../frontend/.env
+代码内容:
+REACT_APP_NEWS_API_KEY=9d9460ed1fbe49c79d9ff163d61c4ce0
+
+
+路径: ../frontend/public/index.html
+代码内容:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio Management</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html> 
+
+路径: ../frontend/src/reportWebVitals.jsx
+代码内容:
+const reportWebVitals = (onPerfEntry) => {
+  if (onPerfEntry && onPerfEntry instanceof Function) {
+    import("web-vitals").then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
+      getCLS(onPerfEntry);
+      getFID(onPerfEntry);
+      getFCP(onPerfEntry);
+      getLCP(onPerfEntry);
+      getTTFB(onPerfEntry);
+    });
+  }
+};
+
+export default reportWebVitals;
+
+
+路径: ../frontend/src/index.js
+代码内容:
+import React from "react";
+import ReactDOM from 'react-dom/client';
+import { createRoot } from "react-dom/client";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
+import {
+  CssBaseline,
+  ThemeProvider,
+  createTheme,
+  StyledEngineProvider,
+} from "@mui/material";
+
+import "./global.css";
+
+const muiTheme = createTheme();
+
+// const container = document.getElementById("root");
+// const root = createRoot(container);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
+  <BrowserRouter>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={muiTheme}>
+        <CssBaseline />
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </ThemeProvider>
+    </StyledEngineProvider>
+  </BrowserRouter>
+);
+
+
+reportWebVitals();
+
+
+路径: ../frontend/src/App.js
+代码内容:
+import { useEffect } from "react";
+import {
+  Routes,
+  Route,
+  useNavigationType,
+  useLocation,
+} from "react-router-dom";
+import Homepage from "./pages/Homepage";
+import Desktop1 from "./pages/MarketPage";
+// import Desktop3 from "./pages/Desktop3";
+// import Desktop11 from "./pages/Desktop11";
+import NewsPage from './pages/NewsPage';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+import PortfolioPage from './pages/PortfolioPage';
+import MarketPage_test from './pages/MarketPage_test';
+
+function App() {
+  const action = useNavigationType();
+  const location = useLocation();
+  const pathname = location.pathname;
+
+  useEffect(() => {
+    if (action !== "POP") {
+      window.scrollTo(0, 0);
+    }
+  }, [action, pathname]);
+
+  useEffect(() => {
+    let title = "";
+    let metaDescription = "";
+
+    switch (pathname) {
+      case "/":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/desktop-3":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/news":
+        title = "";
+        metaDescription = "";
+        break;
+    }
+
+    if (title) {
+      document.title = title;
+    }
+
+    if (metaDescription) {
+      const metaDescriptionTag = document.querySelector(
+        'head > meta[name="description"]'
+      );
+      if (metaDescriptionTag) {
+        metaDescriptionTag.content = metaDescription;
+      }
+    }
+  }, [pathname]);
+
+  return (
+    <Provider store={store}>
+    <Routes>
+      <Route path="/" element={<Homepage />} />
+      <Route path="/news" element={<NewsPage />} /> 
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/portfolio" element={<PortfolioPage />} />
+      <Route path="/markets" element={<Desktop1 />} />
+      <Route path="/market_test" element={<MarketPage_test />} />
+
+    </Routes>
+    </Provider>
+  );
+}
+export default App;
+
+
+路径: ../frontend/src/pages/MarketPage.js
+代码内容:
+import React, { useState, useEffect, useCallback } from "react";
+import NaviBar from "../components/NaviBar";
+import styles from "../styles/MarketPage.module.css";
+import MarketOverview from "../containers/MarketOverview";
+import MarketCard from "../components/MarketCard";
+import Watchlist from "../containers/Watchlist";
+import { Grid, Box } from "@mui/material";
+import axios from "axios";
+import CandleChart from "../containers/CandleChart";
+
+const MarketPage = () => {
+  const [worldIndices, setWorldIndices] = useState([]);
+  const [topGainers, setTopGainers] = useState([]);
+  const [topLosers, setTopLosers] = useState([]);
+  const [lastUpdated, setLastUpdated] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const base_url = process.env.REACT_APP_API_URL;
+
+  // Fetch market data (worldIndices, topGainers, topLosers)
+  const fetchMarketData = useCallback(async () => {
+    try {
+      const response = await axios.get(`${base_url}/market/overview/`);
+      const { world_indices, top_gainers, top_losers } = response.data;
+      console.log("Fetched market data:", response.data);
+      // Clean data
+      setWorldIndices(
+        world_indices.map((index) => ({
+          ...index,
+          change: parseFloat(index.change.replace(/[()]/g, "")),
+        }))
+      );
+      setTopGainers(
+        top_gainers.map((gainer) => ({
+          symbol: gainer.symbol,
+          price: parseFloat(gainer.price),
+          change: parseFloat(gainer.change_percent.replace(/[()]/g, "")),
+        }))
+      );
+      setTopLosers(
+        top_losers.map((loser) => ({
+          symbol: loser.symbol,
+          price: parseFloat(loser.price),
+          change: parseFloat(loser.change_percent.replace(/[()]/g, "")),
+        }))
+      );
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching market data:", error);
+    }
+  }, [base_url]);
+
+  // Check for updates
+  const checkAndUpdate = useCallback(async () => {
+    try {
+      const res = await axios.get(`${base_url}/market/check-update/`);
+      setLastUpdated(res.data.last_updated);
+
+      if (res.data.status === "updated") {
+        console.log("Data updated. Fetching latest market data...");
+        await fetchMarketData();
+      } else {
+        console.log("Data is up-to-date.");
+      }
+    } catch (error) {
+      console.error("Error checking for updates:", error);
+    }
+  }, [base_url, fetchMarketData]);
+
+  useEffect(() => {
+    fetchMarketData(); // Initial fetch
+    checkAndUpdate();  // Check for updates
+  }, [fetchMarketData, checkAndUpdate]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <div className={styles.desktop2}>
+      <div style={{ width: "20%", float: "left" }}>
+        <NaviBar />
+      </div>
+
+      <div style={{ marginLeft: "0%", padding: "1rem" }}>
+        <h1 style={{ fontWeight: "bold", marginBottom: "20px" }}>
+          Market Overview
+        </h1>
+
+        <Grid container spacing={2}>
+          {/* World Indices */}
+          <Grid item xs={12} md={9}>
+            <MarketOverview worldIndices={worldIndices} />
+          </Grid>
+
+          {/* Top Gainers + Top Losers */}
+          <Grid item xs={12} md={2.5}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+              <MarketCard
+                title="Top Gainers"
+                data={topGainers}
+                columns={["Symbol", "Price", "Change%"]}
+              />
+              <MarketCard
+                title="Top Losers"
+                data={topLosers}
+                columns={["Symbol", "Price", "Change%"]}
+              />
+            </div>
+          </Grid>
+        </Grid>
+
+        {/* 第二行：Watchlist */}
+        <Box style={{ marginTop: "20px" }}>
+          <Watchlist />
+        </Box>
+
+        {/* 第三行：Candle Chart */}
+        <Box style={{ marginTop: "20px" }}>
+          <CandleChart />
+        </Box>
+      </div>
+    </div>
+  );
+};
+
+export default MarketPage;
+
+
+路径: ../frontend/src/pages/MarketPage_test.js
+代码内容:
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchAssetData, addAsset, setSelectedMarket } from '../redux/actions/marketActions';
+import { Button, TextField, FormControl, InputLabel, Select, MenuItem, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+
+const MarketPage = () => {
+  const dispatch = useDispatch();
+  const { selectedMarket, assets } = useSelector((state) => state.market);
+  const [newSymbol, setNewSymbol] = useState('');
+
+  const handleMarketChange = (event) => {
+    dispatch(setSelectedMarket(event.target.value));
+  };
+
+  const handleAddAsset = () => {
+    if (newSymbol) {
+      dispatch(addAsset({ market: selectedMarket, symbol: newSymbol }));
+      dispatch(fetchAssetData(selectedMarket, newSymbol));
+      setNewSymbol('');
+    }
+  };
+
+  const assetData = assets[selectedMarket] || {};
+  console.log('assetData', assetData)
+  const assetList = Object.keys(assetData);
+
+  return (
+    <div>
+      <h2>Market Page</h2>
+      <FormControl variant="outlined" fullWidth margin="normal">
+        <InputLabel>Market</InputLabel>
+        <Select value={selectedMarket} onChange={handleMarketChange} label="Market">
+          <MenuItem value="stock">Stock</MenuItem>
+          <MenuItem value="crypto">Crypto</MenuItem>
+        </Select>
+      </FormControl>
+      <TextField
+        label="Asset Symbol"
+        variant="outlined"
+        fullWidth
+        margin="normal"
+        value={newSymbol}
+        onChange={(e) => setNewSymbol(e.target.value)}
+      />
+      <Button variant="contained" color="primary" onClick={handleAddAsset}>
+        Add Asset
+      </Button>
+
+      <div>
+  <h3>Asset Data</h3>
+  {Object.keys(assetData).length > 0 ? (
+    <TableContainer component={Paper}>
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell>Date</TableCell>
+            <TableCell>Price</TableCell>
+            <TableCell>Open</TableCell>
+            <TableCell>High</TableCell>
+            <TableCell>Low</TableCell>
+            <TableCell>Volume</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          <TableRow>
+            <TableCell>{assetData.date || '-'}</TableCell>
+            <TableCell>{assetData.price || '-'}</TableCell>
+            <TableCell>{assetData.open || '-'}</TableCell>
+            <TableCell>{assetData.high || '-'}</TableCell>
+            <TableCell>{assetData.low || '-'}</TableCell>
+            <TableCell>{assetData.volume || '-'}</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </TableContainer>
+  ) : (
+    <p>No asset data available.</p>
+  )}
+</div>
+
+    </div>
+  );
+};
+
+export default MarketPage;
+
+路径: ../frontend/src/pages/NewsPage.js
+代码内容:
+// NewsPage.js
+import React from 'react';
+import { Container, Typography } from '@mui/material';
+import NewsFeed from '../components/NewsFeed';
+import NaviBar from '../components/NaviBar';
+import styles from './Desktop2.module.css';
+
+const NewsPage = () => {
+  return (
+    <div className={styles.pageContainer}>
+      <NaviBar className={styles.navibar} />
+      <NewsFeed className={styles.newsfeed} />
+    </div>
+  );
+};
+
+export default NewsPage;
+
+
+路径: ../frontend/src/pages/Register.js
+代码内容:
+import React, { useState } from 'react';
+import { TextField, Button, Container, Typography, Box, Snackbar, Alert } from '@mui/material';
+import axios from 'axios';
+
+const Register = () => {
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: '',
+  });
+  const [error, setError] = useState(''); // Error state for registration issues
+  const [success, setSuccess] = useState(false); // Success state for registration success
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError(''); // Clear previous error messages
+    try {
+      const response = await axios.post('http://localhost:8000/api/users/register/', formData);
+      setSuccess(true); // Show success message
+    } catch (error) {
+      if (error.response) {
+        setError(error.response.data.username || error.response.data.email || 'Registration failed');
+      } else {
+        setError('An error occurred');
+      }
+    }
+  };
+
+  return (
+    <Container maxWidth="sm">
+      <Box sx={{ mt: 8, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <Typography component="h1" variant="h5">
+          Register
+        </Typography>
+        <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            label="Username"
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
+          />
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            label="Email"
+            name="email"
+            type="email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            label="Password"
+            name="password"
+            type="password"
+            value={formData.password}
+            onChange={handleChange}
+          />
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
+          >
+            Register
+          </Button>
+        </Box>
+
+        {/* Snackbar for success and error messages */}
+        <Snackbar open={success} autoHideDuration={6000} onClose={() => setSuccess(false)}>
+          <Alert onClose={() => setSuccess(false)} severity="success" sx={{ width: '100%' }}>
+            Registration successful!
+          </Alert>
+        </Snackbar>
+        <Snackbar open={Boolean(error)} autoHideDuration={6000} onClose={() => setError('')}>
+          <Alert onClose={() => setError('')} severity="error" sx={{ width: '100%' }}>
+            {error === 'username' ? 'Username already exists' :
+              error === 'email' ? 'Email is already registered' :
+              'Registration failed'}
+          </Alert>
+        </Snackbar>
+      </Box>
+    </Container>
+  );
+};
+
+export default Register;
+
+路径: ../frontend/src/pages/Desktop2.jsx
+代码内容:
+import {
+  Select,
+  InputLabel,
+  MenuItem,
+  FormHelperText,
+  FormControl,
+  InputAdornment,
+  TextField,
+  Icon,
+  IconButton,
+  Button,
+} from "@mui/material";
+import NaviBar from "../components/NaviBar";
+import styles from "./Desktop2.module.css";
+const Desktop = ({portfolio}) => {
+  const placeholderStocks = [
+    { symbol: 'AAPL', price: 150.12, change: +1.2 },
+    { symbol: 'TSLA', price: 620.34, change: -0.5 },
+  ];
+  const stocks = portfolio?.holdings || placeholderStocks;
+
+  return (
+    <div className={styles.desktop1}>
+      <main className={styles.frameParent}>
+        <section className={styles.frameGroup}>
+          <NaviBar />
+          <div className={styles.frameContainer}>
+            <header className={styles.rectangleParent}>
+              <div className={styles.frameChild} />
+              <div className={styles.frameDiv}>
+                <div className={styles.frameParent1}>
+                  <div className={styles.welcomeBackAliWrapper}>
+                    <a className={styles.welcomeBackAli}>Welcome Back, Ali</a>
+                  </div>
+                  <img
+                    className={styles.wavingHandEmoji}
+                    loading="lazy"
+                    alt=""
+                    src="/waving-hand-emoji@2x.png"
+                  />
+                </div>
+                <div className={styles.heresWhatsHappeningWithYWrapper}>
+                  <div className={styles.heresWhatsHappening}>
+                    Here’s what’s happening with your store today.
+                  </div>
+                </div>
+              </div>
+              <div className={styles.frameWrapper}>
+                <div className={styles.frameParent2}>
+                  <img
+                    className={styles.frameItem}
+                    alt=""
+                    src="/group-1000002312@2x.png"
+                  />
+                  <div className={styles.aliRazaParent}>
+                    <a className={styles.aliRaza}>Ali Raza</a>
+                    <img
+                      className={styles.profileIcon}
+                      alt=""
+                      src="/profile-icon.svg"
+                    />
+                    <FormControl
+                      className={styles.webDeveloper}
+                      variant="standard"
+                      sx={{
+                        borderTopWidth: "0px",
+                        borderRightWidth: "0px",
+                        borderBottomWidth: "0px",
+                        borderLeftWidth: "0px",
+                        borderRadius: "0px 0px 0px 0px",
+                        width: "66.2216288384514%",
+                        height: "16px",
+                        m: 0,
+                        p: 0,
+                        "& .MuiInputBase-root": {
+                          m: 0,
+                          p: 0,
+                          minHeight: "16px",
+                          justifyContent: "center",
+                          display: "inline-flex",
+                        },
+                        "& .MuiInputLabel-root": {
+                          m: 0,
+                          p: 0,
+                          minHeight: "16px",
+                          display: "inline-flex",
+                        },
+                        "& .MuiMenuItem-root": {
+                          m: 0,
+                          p: 0,
+                          height: "16px",
+                          display: "inline-flex",
+                        },
+                        "& .MuiSelect-select": {
+                          m: 0,
+                          p: 0,
+                          height: "16px",
+                          alignItems: "center",
+                          display: "inline-flex",
+                        },
+                        "& .MuiInput-input": { m: 0, p: 0 },
+                        "& .MuiInputBase-input": {
+                          color: "#808080",
+                          fontSize: 14,
+                          fontWeight: "Regular",
+                          fontFamily: "Arial",
+                          textAlign: "left",
+                          p: "0 !important",
+                        },
+                      }}
+                    >
+                      <InputLabel color="secondary">Web Developer</InputLabel>
+                      <Select
+                        color="secondary"
+                        size="small"
+                        label="Web Developer"
+                        disableUnderline
+                        displayEmpty
+                        // IconComponent="null"
+                      >
+                        <MenuItem>Web Developer</MenuItem>
+                      </Select>
+                      <FormHelperText />
+                    </FormControl>
+                  </div>
+                </div>
+              </div>
+            </header>
+            <div className={styles.frameParent3}>
+              <div className={styles.rectangleGroup}>
+                <div className={styles.frameInner} />
+                <div className={styles.quickOverviewParent}>
+                  <h3 className={styles.quickOverview}>Quick Overview</h3>
+                  <div className={styles.frameParent4}>
+                    <div className={styles.frameParent5}>
+                      <div className={styles.balanceParent}>
+                        <a className={styles.balance}>Balance</a>
+                        <div className={styles.frameWrapper1}>
+                          <div className={styles.balanceAmountWrapper}>
+                            <div className={styles.balanceAmount}>
+                              $14,032.56
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className={styles.frameWrapper2}>
+                        <div className={styles.investedAmountWrapper}>
+                          <div className={styles.investedAmount}>+5.63%</div>
+                        </div>
+                      </div>
+                    </div>
+                    <a className={styles.invested}>Invested</a>
+                  </div>
+                  <TextField
+                    className={styles.frameTextfield}
+                    placeholder="$7,532.21"
+                    variant="outlined"
+                    InputProps={{
+                      endAdornment: (
+                        <img width="24px" height="24px" src="/arrowright.svg" />
+                      ),
+                    }}
+                    sx={{
+                      "& fieldset": { border: "none" },
+                      "& .MuiInputBase-root": {
+                        height: "57px",
+                        backgroundColor: "#2c2c2c",
+                        paddingRight: "16px",
+                        borderRadius: "8px",
+                        fontSize: "20px",
+                      },
+                      "& .MuiInputBase-input": { color: "#fff" },
+                      width: "316px",
+                    }}
+                  />
+                </div>
+                <div className={styles.smallWidgetWrapper}>
+                  <div className={styles.smallWidget}>
+                    <div className={styles.yearlyInvestmentParent}>
+                      <div className={styles.yearlyInvestment}>Top assets</div>
+                      <img
+                        className={styles.widgetGraphIcon}
+                        loading="lazy"
+                        alt=""
+                        src="/frame.svg"
+                      />
+                    </div>
+                    <img
+                      className={styles.separatorIcon}
+                      loading="lazy"
+                      alt=""
+                      src="/separator.svg"
+                    />
+                    <div className={styles.frameParent6}>
+                      <div className={styles.yearlyInvestmentGroup}>
+                        <div className={styles.yearlyInvestment1}>Name</div>
+                        <div className={styles.yearlyInvestment2}>Price</div>
+                        <div className={styles.yearlyInvestment3}>Change</div>
+                      </div>
+                      <div className={styles.yearlyInvestmentContainer}>
+                        <div className={styles.yearlyInvestment1}>Apple</div>
+                        <div className={styles.yearlyInvestment2}>168,71</div>
+                        <div className={styles.yearlyInvestment6}>+ 14,34%</div>
+                      </div>
+                      <div className={styles.yearlyInvestmentContainer}>
+                        <div className={styles.yearlyInvestment1}>SpaceX</div>
+                        <div className={styles.yearlyInvestment2}>233,99</div>
+                        <div className={styles.yearlyInvestment9}>+ 11,24%</div>
+                      </div>
+                      <div className={styles.yearlyInvestmentContainer}>
+                        <div className={styles.yearlyInvestment1}>Google</div>
+                        <div className={styles.yearlyInvestment11}>
+                          2,545,06
+                        </div>
+                        <div className={styles.yearlyInvestment12}>
+                          - 10,21%
+                        </div>
+                      </div>
+                      <div className={styles.yearlyInvestmentContainer}>
+                        <div className={styles.yearlyInvestment1}>Yahoo</div>
+                        <div className={styles.yearlyInvestment2}>261,11</div>
+                        <div className={styles.yearlyInvestment9}>+ 10,11%</div>
+                      </div>
+                      <div className={styles.yearlyInvestmentParent4}>
+                        <div className={styles.yearlyInvestment16}>
+                          Microsoft
+                        </div>
+                        <div className={styles.yearlyInvestment16}>279,87</div>
+                        <div className={styles.yearlyInvestment18}>+ 9,77%</div>
+                      </div>
+                      <div className={styles.yearlyInvestmentParent4}>
+                        <div className={styles.yearlyInvestment16}>PayPal</div>
+                        <div className={styles.yearlyInvestment16}>438,99</div>
+                        <div className={styles.yearlyInvestment18}>+ 8,56%</div>
+                      </div>
+                      <div className={styles.yearlyInvestmentParent4}>
+                        <div className={styles.yearlyInvestment16}>Netflix</div>
+                        <div className={styles.yearlyInvestment16}>887,99</div>
+                        <div className={styles.yearlyInvestment24}>- 4,22%</div>
+                      </div>
+                      <div className={styles.yearlyInvestmentParent4}>
+                        <div className={styles.yearlyInvestment16}>Spotify</div>
+                        <div className={styles.yearlyInvestment16}>99,18</div>
+                        <div className={styles.yearlyInvestment18}>+ 3,09%</div>
+                      </div>
+                      <div className={styles.yearlyInvestmentParent4}>
+                        <div className={styles.yearlyInvestment16}>Twitter</div>
+                        <div className={styles.yearlyInvestment16}>991,21</div>
+                        <div className={styles.yearlyInvestment18}>+ 2,18%</div>
+                      </div>
+                      <div className={styles.yearlyInvestmentParent4}>
+                        <div className={styles.yearlyInvestment16}>
+                          McDonald's
+                        </div>
+                        <div className={styles.yearlyInvestment16}>124.33</div>
+                        <div className={styles.yearlyInvestment24}>- 1.00%</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.rectangleContainer}>
+                <div className={styles.rectangleDiv} />
+                <div className={styles.wrapper}>
+                  <b className={styles.b}>75%</b>
+                </div>
+                <div className={styles.rectangleParent1}>
+                  <div className={styles.frameChild1} />
+                  <div className={styles.checkYourDailyNewsParent}>
+                    <b
+                      className={styles.checkYourDaily}
+                    >{`Check Your Daily News! `}</b>
+                    <div
+                      className={styles.ametMinimMollit}
+                    >{`Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. `}</div>
+                  </div>
+                  <Button
+                    className={styles.frameButton}
+                    disableElevation
+                    variant="contained"
+                    sx={{
+                      textTransform: "none",
+                      color: "#fff",
+                      fontSize: "14",
+                      background: "#30757d",
+                      borderRadius: "10px",
+                      "&:hover": { background: "#30757d" },
+                      height: 42,
+                    }}
+                  >
+                    Quick Overview
+                  </Button>
+                </div>
+                <div className={styles.frameWrapper3}>
+                  <div className={styles.ellipseParent}>
+                    <div className={styles.ellipseDiv} />
+                    <img
+                      className={styles.ellipseIcon}
+                      alt=""
+                      src="/ellipse-8.svg"
+                    />
+                  </div>
+                </div>
+                <img
+                  className={styles.yellowRocketFlyingUp}
+                  alt=""
+                  src="/yellow-rocket-flying-up@2x.png"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <div className={styles.frameWrapper4}>
+          <img
+            className={styles.groupIcon}
+            loading="lazy"
+            alt=""
+            src="/group-2@2x.png"
+          />
+        </div>
+      </main>
+      <div className={styles.quickOverviewWrapper}>
+        <div className={styles.quickOverview1}>Quick Overview</div>
+      </div>
+    </div>
+  );
+};
+
+export default Desktop;
+
+
+路径: ../frontend/src/pages/Login.js
+代码内容:
+import React, { useState } from 'react';
+import { TextField, Button, Container, Typography, Box, Snackbar, Alert } from '@mui/material';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../redux/actions/authActions';
+import { useNavigate } from 'react-router-dom';
+
+const Login = () => {
+  const [formData, setFormData] = useState({
+    username: '',
+    password: '',
+  });
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const error = useSelector((state) => state.auth.error);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(login(formData, navigate));  // 触发 login 操作
+  };
+
+  return (
+    <Container maxWidth="sm">
+      <Box sx={{ mt: 8, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <Typography component="h1" variant="h5">
+          Login
+        </Typography>
+        <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            label="Username"
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
+          />
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            label="Password"
+            name="password"
+            type="password"
+            value={formData.password}
+            onChange={handleChange}
+          />
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
+          >
+            Login
+          </Button>
+        </Box>
+
+        <Snackbar open={Boolean(error)} autoHideDuration={6000} onClose={() => dispatch({ type: 'CLEAR_ERROR' })}>
+          <Alert onClose={() => dispatch({ type: 'CLEAR_ERROR' })} severity="error" sx={{ width: '100%' }}>
+            {error}
+          </Alert>
+        </Snackbar>
+      </Box>
+    </Container>
+  );
+};
+
+export default Login;
+
+路径: ../frontend/src/pages/Homepage.js
+代码内容:
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import NaviBar from '../components/NaviBar';
+import WelcomeSection from '../containers/WelcomeSection';
+import QuickOverview from '../containers/QuickOverview';
+import TopAssets from '../containers/TopAssets';
+import Login from '../components/LoginModal';
+import Register from '../components/RegisterModal';
+import Watchlist from '../containers/Watchlist_display';
+import ChatWithXAI from '../components/ChatWithXAI';
+import styles from '../styles/Homepage.module.css';
+
+const Homepage = () => {
+  const [time, setTime] = useState(new Date());
+  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('accessToken'));
+  const [showLogin, setShowLogin] = useState(false);
+  const [showRegister, setShowRegister] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const timer = setInterval(() => setTime(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      setShowLogin(true);
+    }
+  }, [isLoggedIn]);
+
+  const handleLogout = () => {
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('refresh_token');
+    localStorage.removeItem('username');
+    setIsLoggedIn(false);
+    navigate('/login');
+  };
+
+  const handleLoginSuccess = () => {
+    setIsLoggedIn(true);
+    setShowLogin(false);
+    window.location.reload();
+  };
+
+  return (
+    <div className={styles.homepage}>
+      <div className={styles.naviBar}>
+        <NaviBar />
+      </div>
+      <main className={styles.mainContent}>
+        <div className={styles.contentWrapper}>
+          <WelcomeSection username={localStorage.getItem('username')} />
+          <div className={styles.row}>
+            <div className={styles.leftColumn}>
+              <QuickOverview />
+              <Watchlist />
+            </div>
+            <div className={styles.rightColumn}>
+              <TopAssets />
+              <ChatWithXAI className={styles.chatAssistant} />
+            </div>
+          </div>
+        </div>
+      </main>
+      {showLogin && (
+        <Login
+          onSuccess={handleLoginSuccess}
+          onSwitch={() => {
+            setShowLogin(false);
+            setShowRegister(true);
+          }}
+        />
+      )}
+      {showRegister && (
+        <Register
+          onSuccess={() => {
+            setShowRegister(false);
+            setShowLogin(true);
+          }}
+          onSwitch={() => {
+            setShowRegister(false);
+            setShowLogin(true);
+          }}
+        />
+      )}
+    </div>
+  );
+};
+
+export default Homepage;
+
+
+路径: ../frontend/src/pages/PortfolioPage.js
+代码内容:
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getPortfolio } from '../redux/actions/portfolioActions';
+import StatisticsPanel from '../components/StatisticsPanel';
+import HoldingList from '../components/HoldingList';
+import TransactionTable from '../components/TransactionTable';
+import TransactionForm from '../components/TransactionForm';
+import { useNavigate } from 'react-router-dom';
+import ProfitChart from '../containers/ProfitChart';
+import NaviBar from "../components/NaviBar";
+import QuickOverview from '../containers/QuickOverview_changed';
+import '../styles/PortfolioPage.css';
+
+const PortfolioPage = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const { portfolios, loading, error } = useSelector(state => state.portfolio);
+
+    // console.log('PortfolioPage loaded, portfolio:', portfolios);
+
+    const portfolio = portfolios && portfolios.length > 0 ? portfolios[0] : null;
+    // console.log('holdings:', portfolio?.holdings); 
+    const transactions = portfolio?.holdings
+        ? portfolio.holdings.flatMap(holding => holding.transactions)
+        : [];
+
+    // console.log('transactions:', transactions);
+
+    // get portfolio data when component is loaded
+    useEffect(() => {
+        const token = localStorage.getItem('accessToken');
+        console.log('PortfolioPage loaded, access token:', token);
+
+        if (token) {
+            dispatch(getPortfolio());
+        } else {
+            console.warn('Access token not found, redirecting to login.');
+            navigate('/login');
+        }
+    }, [dispatch, navigate]);
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
+    return (
+        <div className="page-container">
+            <div className="navi-bar">
+                <NaviBar />
+            </div>
+            <div className="main-content">
+                <div className="row first-row">
+                    <div className="quick-overview">
+                        <QuickOverview />
+                    </div>
+                    <div className="profit-chart">
+                        <ProfitChart />
+                    </div>
+                </div>
+                <div className="row holding-list">
+                    <HoldingList data={portfolio?.holdings || []} />
+                </div>
+                <div className="row transaction-table">
+                    <TransactionTable data={transactions || []} />
+                </div>
+            </div>
+        </div>
+    );
+};
+
+
+export default PortfolioPage;
+
+路径: ../frontend/src/redux/store.js
+代码内容:
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import portfolioReducer from './reducers/portfolioReducer';
+import authReducer from './reducers/authReducer';
+import marketReducer from './reducers/marketReducer';
+// combine reducers
+const rootReducer = combineReducers({
+    portfolio: portfolioReducer, // add portfolio reducer
+    auth: authReducer, // add auth reducer
+    market: marketReducer, // add market reducer
+    // add more reducers
+});
+
+// create redux store, apply thunk middleware
+const store = createStore(
+    rootReducer,
+    composeWithDevTools(applyMiddleware(thunk))
+);
+
+export default store;
+
+路径: ../frontend/src/redux/actions/authActions.js
+代码内容:
+import axios from 'axios';
+import { getPortfolio } from './portfolioActions';
+
+console.log('API_BASE_URL:', process.env.REACT_APP_API_URL);
+export const login = (formData, navigate) => async dispatch => {
+  try {
+    const res = await axios.post(`${process.env.REACT_APP_API_URL}/token/`,formData, {
+      headers: { 'Content-Type': 'application/json'}
+    });
+    console.log('Login response:', res.data);
+
+    const { access, refresh } = res.data;
+
+    if (access && refresh) {
+        localStorage.setItem('accessToken', access);
+        localStorage.setItem('refreshToken', refresh);
+        localStorage.setItem('username', formData.username);
+        console.log('Tokens stored in localStorage.');
+        dispatch({ type: 'LOGIN_SUCCESS' });
+        navigate('/');
+        // dispatch(getPortfolio());  
+      } else {
+        console.error('No access or refresh token in response:', res.data);
+      }
+  } catch (error) {
+    console.error('Login failed:', error.response ? error.response.data : error.message);
+    dispatch({ type: 'LOGIN_FAIL' });
+  }
+};
+
+
+路径: ../frontend/src/redux/actions/portfolioActions.js
+代码内容:
+// src/redux/actions/portfolioActions.js
+import axios from 'axios';
+
+export const GET_PORTFOLIO = 'GET_PORTFOLIO';
+export const CREATE_TRANSACTION = 'CREATE_TRANSACTION';
+const API_BASE_URL = process.env.REACT_APP_API_URL;
+
+export const getPortfolio = () => async (dispatch) => {
+  dispatch({ type: 'GET_PORTFOLIO' });
+  try {
+    const token = localStorage.getItem('accessToken');
+    console.log('Retrieved access token from localStorage:', token); 
+
+    if (!token) {
+      console.warn('No access token found, cannot fetch portfolio.');
+      dispatch({ type: 'GET_PORTFOLIO_FAIL', payload: 'No access token found' });
+      return;
+    }
+
+    console.log('Sending request to fetch portfolio with token in headers...');
+
+    const res = await axios.get(`${API_BASE_URL}/portfolios/`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    console.log('Portfolio data retrieved successfully:', res.data);
+
+    dispatch({
+      type: 'GET_PORTFOLIO_SUCCESS',
+      payload: res.data,
+    });
+  } catch (error) {
+    if (error.response) {
+      console.error('Error fetching portfolio:', error.response.status, error.response.data);
+    } else {
+      console.error('Network error or server not reachable:', error.message);
+    }
+    dispatch({
+      type: 'GET_PORTFOLIO_FAIL',
+      payload: 'Failed to fetch portfolio data',
+    });
+  }
+};
+// Create Transaction action
+export const createTransaction = (tradeData) => async (dispatch) => {
+  try {
+    const token = localStorage.getItem('accessToken');
+    await axios.post(
+      `${API_BASE_URL}/portfolio/transactions/`,
+      tradeData,
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+    console.log('Transaction created successfully');
+    console.log('Refreshing portfolio data...');
+    dispatch(getPortfolio()); // Refresh portfolio data after adding transaction
+  } catch (error) {
+    console.error('Failed to create transaction:', error.response?.data || error.message);
+  }
+};
+
+// Edit Transaction
+export const editTransaction = (transactionId, updatedData) => async (dispatch) => {
+  try {
+      const token = localStorage.getItem('accessToken');
+      await axios.put(`${API_BASE_URL}/portfolio/transactions/${transactionId}/`, updatedData, {
+          headers: { Authorization: `Bearer ${token}` },
+      });
+      dispatch(getPortfolio()); // Refresh portfolio data
+  } catch (error) {
+      console.error('Failed to edit transaction:', error.response?.data || error.message);
+  }
+};
+
+// Delete Transaction
+export const deleteTransaction = (transactionId) => async (dispatch) => {
+  try {
+      const token = localStorage.getItem('accessToken');
+      await axios.delete(`${API_BASE_URL}/portfolio/transactions/${transactionId}/`, {
+          headers: { Authorization: `Bearer ${token}` },
+      });
+      dispatch(getPortfolio()); // Refresh portfolio data
+  } catch (error) {
+      console.error('Failed to delete transaction:', error.response?.data || error.message);
+  }
+};
+
+路径: ../frontend/src/redux/actions/marketActions.js
+代码内容:
+// src/redux/actions/marketActions.js
+import axios from 'axios';
+
+export const FETCH_ASSET_DATA = 'FETCH_ASSET_DATA';
+export const ADD_ASSET = 'ADD_ASSET';
+export const SET_SELECTED_MARKET = 'SET_SELECTED_MARKET';
+export const ADD_ASSET_TO_WATCHLIST = 'ADD_ASSET_TO_WATCHLIST';
+export const REMOVE_ASSET_FROM_WATCHLIST = 'REMOVE_ASSET_FROM_WATCHLIST';
+
+export const FETCH_WATCHLIST = 'FETCH_WATCHLIST';
+export const ADD_WATCHLIST_ITEM = 'ADD_WATCHLIST_ITEM';
+export const REMOVE_WATCHLIST_ITEM = 'REMOVE_WATCHLIST_ITEM';
+export const WATCHLIST_ERROR = 'WATCHLIST_ERROR';
+
+const API_BASE_URL = process.env.REACT_APP_API_URL;
+
+export const fetchAssetData = (market, symbol) => async (dispatch) => {
+  try {
+    const token = localStorage.getItem('accessToken');
+    if (!token) {
+      console.warn('No access token found, cannot fetch asset data.');
+      return;
+    }
+    console.log('fetching asset data', `${API_BASE_URL}/market/${market}/${symbol}/`);
+    const response = await axios.get(`${API_BASE_URL}/market/${market}/${symbol}/`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    console.log('fetch asset data', response);
+    dispatch({
+      type: FETCH_ASSET_DATA,
+      payload: { market, data: response.data },
+    });
+  } catch (error) {
+    if (error.response) {
+      // console.error('Failed to fetch asset data:', error.response.status, error.response.data);
+    } else {
+      console.error('Network error or server not reachable:', error.message);
+    }
+  }
+};
+
+export const addAsset = (market, symbol) => ({
+  type: ADD_ASSET,
+  payload: { market, symbol },
+});
+
+export const setSelectedMarket = (market) => ({
+  type: SET_SELECTED_MARKET,
+  payload: market,
+});
+
+// Watchlist actions
+export const addAssetToWatchlist = (market, symbol) => ({
+    type: ADD_ASSET_TO_WATCHLIST,
+    payload: { market, symbol },
+  });
+  
+  export const removeAssetFromWatchlist = (symbol) => ({
+    type: REMOVE_ASSET_FROM_WATCHLIST,
+    payload: symbol,
+  });
+  
+
+
+  export const fetchWatchlist = () => async (dispatch) => {
+    try {
+      const token = localStorage.getItem('accessToken');
+      const response = await axios.get(`${API_BASE_URL}/market/watchlist/`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      dispatch({
+        type: FETCH_WATCHLIST,
+        payload: response.data,
+      });
+    } catch (error) {
+      dispatch({
+        type: WATCHLIST_ERROR,
+        payload: 'Failed to fetch watchlist.',
+      });
+    }
+  };
+  
+  export const addWatchlistItem = (symbol) => async (dispatch) => {
+    try {
+      const token = localStorage.getItem('accessToken');
+      const response = await axios.post(
+        `${API_BASE_URL}/market/watchlist/`,
+        { symbol },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      dispatch({
+        type: ADD_WATCHLIST_ITEM,
+        payload: response.data,
+      });
+    } catch (error) {
+      dispatch({
+        type: WATCHLIST_ERROR,
+        payload: 'Failed to add asset to watchlist.',
+      });
+    }
+  };
+  
+  export const removeWatchlistItem = (id) => async (dispatch) => {
+    try {
+      const token = localStorage.getItem('accessToken');
+      await axios.delete(`${API_BASE_URL}/market/watchlist/${id}/`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      dispatch({
+        type: REMOVE_WATCHLIST_ITEM,
+        payload: id,
+      });
+    } catch (error) {
+      dispatch({
+        type: WATCHLIST_ERROR,
+        payload: 'Failed to remove asset from watchlist.',
+      });
+    }
+  };
+  
+
+路径: ../frontend/src/redux/reducers/index.js
+代码内容:
+import { combineReducers } from 'redux';
+import portfolioReducer from './portfolioReducer';
+
+export default combineReducers({
+    portfolio: portfolioReducer,
+    auth: authReducer,
+});
+
+路径: ../frontend/src/redux/reducers/authReducer.js
+代码内容:
+const initialState = {
+    isAuthenticated: !!localStorage.getItem('access_token'),
+    error: '',
+  };
+  
+  const authReducer = (state = initialState, action) => {
+    switch (action.type) {
+      case 'LOGIN_SUCCESS':
+        return { ...state, isAuthenticated: true, error: '' };
+      case 'LOGIN_FAIL':
+        return { ...state, error: action.payload };
+      case 'LOGOUT':
+        return { ...state, isAuthenticated: false, error: '' };
+      case 'CLEAR_ERROR':
+        return { ...state, error: '' };
+      default:
+        return state;
+    }
+  };
+  
+  export default authReducer;
+
+路径: ../frontend/src/redux/reducers/portfolioReducer.js
+代码内容:
+import { GET_PORTFOLIO } from '../actions/portfolioActions';
+
+const initialState = {
+    portfolios: [],
+};
+
+export default function portfolioReducer(state = initialState, action) {
+    switch (action.type) {
+        case 'GET_PORTFOLIO':
+            console.log('GET_PORTFOLIO:', action.payload);
+            return { ...state, loading: true, error: null };
+        case 'GET_PORTFOLIO_SUCCESS':
+            console.log('GET_PORTFOLIO_SUCCESS:', action.payload);
+            return { ...state, loading: false, portfolios: action.payload, error: null };
+        case 'GET_PORTFOLIO_FAIL':
+            return { ...state, loading: false, error: action.payload };
+        default:
+            return state;
+    }
+}
+
+路径: ../frontend/src/redux/reducers/marketReducer.js
+代码内容:
+// src/redux/reducers/marketReducer.js
+import {
+    FETCH_ASSET_DATA, ADD_ASSET, SET_SELECTED_MARKET, ADD_ASSET_TO_WATCHLIST,
+    REMOVE_ASSET_FROM_WATCHLIST,
+} from '../actions/marketActions';
+
+import {
+    FETCH_WATCHLIST,
+    ADD_WATCHLIST_ITEM,
+    REMOVE_WATCHLIST_ITEM,
+    WATCHLIST_ERROR,
+} from '../actions/marketActions';
+
+const initialState = {
+    selectedMarket: 'stock',
+    assets: {},
+    watchlist: [],
+    error: null,
+};
+
+
+const marketReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case SET_SELECTED_MARKET:
+            return { ...state, selectedMarket: action.payload };
+        // case ADD_ASSET:
+        //     const { market, symbol } = action.payload;
+        //     return {
+        //         ...state,
+        //         assets: {
+        //             ...state.assets,
+        //             [market]: [...(state.assets[market] || []), symbol],
+        //         },
+        //     };
+        case ADD_ASSET_TO_WATCHLIST:
+            const { symbol } = action.payload;
+            if (!state.watchlist.some(asset => asset.symbol === symbol)) {
+                return {
+                    ...state,
+                    watchlist: [...state.watchlist, { symbol }],
+                    error: null,
+                };
+            }
+        case REMOVE_ASSET_FROM_WATCHLIST:
+            return {
+                ...state,
+                watchlist: state.watchlist.filter((asset) => asset.symbol !== action.payload),
+            };
+        case FETCH_ASSET_DATA:
+            const { data, market: fetchedMarket } = action.payload;
+            return {
+                ...state,
+                assets: {
+                    ...state.assets,
+                    [fetchedMarket]: {
+                        ...state.assets[fetchedMarket],
+                        ...data,
+                    },
+                },
+                watchlist: state.watchlist.map((asset) =>
+                    asset.symbol === data.symbol ? { ...asset, ...data } : asset
+                ),
+            };
+
+        case FETCH_WATCHLIST:
+            return {
+                ...state,
+                watchlist: action.payload,
+                error: null,
+            };
+        case ADD_WATCHLIST_ITEM:
+            return {
+                ...state,
+                watchlist: [...state.watchlist, action.payload],
+                error: null,
+            };
+        case REMOVE_WATCHLIST_ITEM:
+            return {
+                ...state,
+                watchlist: state.watchlist.filter((item) => item.id !== action.payload),
+                error: null,
+            };
+        case WATCHLIST_ERROR:
+            return {
+                ...state,
+                error: action.payload,
+            };
+
+
+
+        default:
+            return state;
+    }
+};
+
+export default marketReducer;
+
+

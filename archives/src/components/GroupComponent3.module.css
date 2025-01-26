@@ -1,0 +1,342 @@
+.frameChild {
+  width: 272px;
+  height: 1024px;
+  position: relative;
+  border-radius: 0 0 var(--br-3xs) 0;
+  background-color: var(--color-white);
+  display: none;
+}
+.trendingTopic1Icon {
+  height: 49.4px;
+  width: 49.4px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.uifryIcon {
+  height: 42.6px;
+  width: 95.7px;
+  position: relative;
+  flex-shrink: 0;
+}
+.trendingTopic1Parent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-3xs-4);
+  flex-shrink: 0;
+}
+.tm {
+  position: relative;
+  font-weight: 800;
+  display: inline-block;
+  min-width: 14.1px;
+  flex-shrink: 0;
+}
+.frameParent,
+.market,
+.trending {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.market {
+  flex-direction: column;
+  padding: var(--padding-mini) 0 0;
+}
+.frameParent,
+.trending {
+  flex-direction: row;
+}
+.frameParent {
+  gap: var(--gap-10xs-6);
+  z-index: 1;
+}
+.trending {
+  padding: 0 var(--padding-4xl) var(--padding-11xl-9);
+  font-size: var(--font-size-7xs);
+  color: var(--color-white);
+  font-family: var(--font-plus-jakarta-sans);
+}
+.fillIcon {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  object-fit: cover;
+  z-index: 1;
+}
+.chart {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-12xs) 0 0;
+}
+.homepage {
+  flex: 1;
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+}
+.home,
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.title {
+  flex: 1;
+  gap: var(--gap-lgi);
+}
+.home {
+  width: 162px;
+  padding: 0 var(--padding-3xl);
+  box-sizing: border-box;
+}
+.marketChartChild {
+  height: 57px;
+  width: 237px;
+  position: relative;
+  border-radius: var(--br-3xs);
+  display: none;
+}
+.barLineChartIcon {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: 2;
+}
+.markets {
+  text-decoration: none;
+  position: relative;
+  color: inherit;
+  display: inline-block;
+  min-width: 58px;
+  z-index: 2;
+}
+.marketChart {
+  align-self: stretch;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-darkslategray-100);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-mid) var(--padding-xl) var(--padding-xs);
+  gap: var(--gap-mid);
+  z-index: 1;
+}
+.portfolio,
+.wallet02Icon {
+  position: relative;
+  z-index: 1;
+}
+.wallet02Icon {
+  height: 24px;
+  width: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.portfolio {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  min-width: 60px;
+  cursor: pointer;
+}
+.balance {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-lgi);
+}
+.messageIcon,
+.news1 {
+  position: relative;
+  flex-shrink: 0;
+}
+.messageIcon {
+  height: 18px;
+  width: 20.2px;
+  z-index: 3;
+}
+.news1 {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  min-width: 42px;
+  cursor: pointer;
+  z-index: 1;
+}
+.news {
+  flex-direction: row;
+  gap: var(--gap-3xl-8);
+}
+.news,
+.portfolioStats,
+.stats,
+.wallet {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.wallet {
+  flex-direction: column;
+  gap: var(--gap-14xl);
+}
+.portfolioStats,
+.stats {
+  flex-direction: row;
+  padding: 0 var(--padding-lg);
+  color: var(--color-black);
+}
+.stats {
+  align-self: stretch;
+  flex-direction: column;
+  padding: 0 var(--padding-11xs) var(--padding-7xs) 0;
+  gap: var(--gap-base);
+  color: var(--color-white);
+}
+.settings {
+  position: relative;
+  display: inline-block;
+  min-width: 59px;
+  z-index: 1;
+}
+.settingsButton,
+.settingsButtonWrapper,
+.settingsTitle {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.settingsTitle {
+  flex-direction: column;
+  padding: var(--padding-9xs) 0 0;
+}
+.settingsButton,
+.settingsButtonWrapper {
+  flex-direction: row;
+}
+.settingsButton {
+  gap: var(--gap-3xl);
+}
+.settingsButtonWrapper {
+  padding: 0 var(--padding-mini) var(--padding-2xs-5);
+}
+.dividerChild {
+  height: 1px;
+  flex: 1;
+  position: relative;
+  border-top: 1px solid var(--color-gainsboro-100);
+  box-sizing: border-box;
+  z-index: 1;
+}
+.divider {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 var(--padding-mid-5) var(--padding-mini);
+}
+.helpCentre,
+.security1 {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+.security1 {
+  text-decoration: none;
+  color: inherit;
+  min-width: 59px;
+}
+.helpCentre {
+  min-width: 87px;
+}
+.help,
+.helpButton {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.helpButton {
+  gap: var(--gap-2xl);
+}
+.help {
+  padding: 0 0 0 var(--padding-12xs);
+}
+.security {
+  flex-direction: column;
+  gap: var(--gap-11xl);
+}
+.content,
+.security,
+.securityHelp {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.securityHelp {
+  flex-direction: row;
+  padding: 0 var(--padding-mini);
+}
+.content {
+  width: 239px;
+  flex-direction: column;
+  gap: var(--gap-2xl);
+}
+.logout {
+  position: relative;
+  line-height: 18px;
+  display: inline-block;
+  min-width: 50px;
+  z-index: 1;
+}
+.logoutButton,
+.logoutButtonWrapper,
+.rectangleParent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.logoutButton {
+  gap: var(--gap-mid);
+}
+.logoutButtonWrapper,
+.rectangleParent {
+  padding: 0 var(--padding-lgi);
+}
+.rectangleParent {
+  border-radius: 0 0 var(--br-3xs) 0;
+  background-color: var(--color-white);
+  flex-direction: column;
+  padding: var(--padding-38xl) var(--padding-sm) var(--padding-353xl);
+  gap: var(--gap-11xl);
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-black);
+  font-family: var(--font-amiri);
+}
+@media screen and (max-width: 1100px) {
+  .rectangleParent {
+    padding-top: var(--padding-18xl);
+    padding-bottom: var(--padding-223xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 750px) {
+  .rectangleParent {
+    padding-top: var(--padding-5xl);
+    padding-bottom: var(--padding-138xl);
+    box-sizing: border-box;
+  }
+}

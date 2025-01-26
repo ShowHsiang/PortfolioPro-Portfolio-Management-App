@@ -1,0 +1,91 @@
+.teslaMotors11Icon {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.teslaInc {
+  position: relative;
+  display: inline-block;
+  min-width: 41px;
+}
+.stockInfo {
+  width: 62px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  box-sizing: border-box;
+  gap: var(--gap-7xs);
+}
+.ticker,
+.tsla {
+  position: relative;
+  text-transform: uppercase;
+}
+.ticker {
+  color: var(--color-yellowgreen);
+}
+.teslaSymbol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+  text-align: right;
+}
+.stockDetails {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+}
+.investedValue,
+.separator {
+  position: relative;
+  text-transform: capitalize;
+}
+.separator {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-800);
+}
+.valueLabels {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+}
+.valueContainerChild {
+  height: 24px;
+  width: 78px;
+  position: relative;
+  object-fit: contain;
+}
+.stockContainer,
+.valueContainer {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--padding-xs);
+  gap: var(--gap-xl);
+  color: var(--color-gray-700);
+}
+.stockContainer {
+  border-radius: var(--br-5xs);
+  background-color: var(--color-white);
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--padding-base) var(--padding-xs);
+  gap: var(--gap-base);
+  text-align: left;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-800);
+  font-family: var(--font-abel);
+}

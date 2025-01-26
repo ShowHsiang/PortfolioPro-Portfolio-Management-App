@@ -1,0 +1,397 @@
+.frameChild {
+  width: 803px;
+  height: 885px;
+  position: relative;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  display: none;
+  max-width: 100%;
+}
+.quickOverview {
+  margin: 0;
+  flex: 1;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+  z-index: 1;
+}
+.overviewTitle {
+  width: 345.6px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-6xl);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.portfolioAnalytics {
+  align-self: stretch;
+  position: relative;
+  display: inline-block;
+  min-width: 99px;
+}
+.chartTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-12xs) 0 0;
+}
+.d {
+  width: 29px;
+  position: relative;
+  display: inline-block;
+}
+.dWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-12xs) 0 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-blue);
+}
+.frameItem {
+  height: 21px;
+  width: 1px;
+  position: relative;
+  border-right: 1px solid var(--color-gray-1500);
+  box-sizing: border-box;
+}
+.dContainer,
+.frameParent {
+  justify-content: flex-start;
+}
+.dContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-10xs-5) 0 0;
+}
+.frameParent {
+  width: 340px;
+  gap: var(--gap-xs);
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-700);
+}
+.chartHeader,
+.chartTitleWrapper,
+.frameParent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.chartTitleWrapper {
+  flex: 1;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+}
+.chartHeader {
+  align-self: stretch;
+  justify-content: flex-end;
+  padding: 0 var(--padding-7xs) 0 var(--padding-5xs);
+  box-sizing: border-box;
+  font-size: var(--font-size-sm);
+}
+.chartContentChild,
+.chartContentItem {
+  position: absolute;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+.chartContentChild {
+  width: 28px;
+  height: 1px;
+  top: 32.5px;
+  right: 362px;
+  border-top: 1px solid var(--color-gray-800);
+  z-index: 1;
+}
+.chartContentItem {
+  width: 0;
+  height: 244px;
+  top: 58.5px;
+  left: 360.7px;
+  border-right: 1px dashed var(--color-gray-800);
+  opacity: 0.5;
+}
+.chartLegend {
+  width: 39px;
+  position: relative;
+  display: inline-block;
+}
+.chartColumnChild {
+  height: 244px;
+  width: 620.5px;
+  position: absolute;
+  margin: 0 !important;
+  top: -36px;
+  left: 0;
+  z-index: 1;
+}
+.chartColumnItem {
+  height: 214px;
+  flex: 1;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  z-index: 2;
+}
+.day {
+  position: relative;
+  font-size: var(--font-size-base);
+  color: var(--color-white);
+  text-align: left;
+}
+.dataPoint,
+.pointLabel {
+  position: absolute;
+  margin: 0 !important;
+  background-color: var(--color-blue);
+  z-index: 3;
+}
+.pointLabel {
+  top: 4px;
+  right: 176px;
+  border-radius: var(--br-5xs);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-xs);
+  gap: var(--gap-7xs);
+}
+.dataPoint {
+  height: 12px;
+  width: 12px;
+  top: 28px;
+  right: 297.5px;
+  border-radius: 50%;
+}
+.chartColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  max-width: 100%;
+}
+.values,
+.values1,
+.values4 {
+  width: 38px;
+  position: relative;
+  display: inline-block;
+}
+.values1,
+.values4 {
+  width: 32px;
+}
+.values4 {
+  width: 14px;
+}
+.chartColumns,
+.valueBars {
+  display: flex;
+  justify-content: flex-start;
+}
+.valueBars {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-13xl);
+  color: var(--color-gray-800);
+}
+.chartColumns {
+  align-self: stretch;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: var(--gap-xs);
+  max-width: 100%;
+}
+.am {
+  display: inline-block;
+  min-width: 31px;
+}
+.am,
+.pm {
+  position: relative;
+}
+.chartPoints,
+.timeLabels {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.timeLabels {
+  width: 596px;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+  color: var(--color-gray-700);
+}
+.chartPoints {
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--gap-base);
+}
+.chartArea,
+.chartContent {
+  align-self: stretch;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.chartArea {
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-12xs);
+  color: #dcd2d2;
+}
+.chartContent {
+  border-radius: var(--br-5xs);
+  background-color: var(--color-white);
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 14.5px 43px 46.5px;
+  position: relative;
+  gap: var(--gap-3xl-5);
+  z-index: 2;
+}
+.backgroundShapeChild {
+  height: 208px;
+  flex: 1;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+.backgroundShape {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-11xs);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.analyticsChart,
+.chartWrapper,
+.rectangleParent {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.chartWrapper {
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: center;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-800);
+  font-family: var(--font-abel);
+}
+.analyticsChart,
+.rectangleParent {
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+.rectangleParent {
+  flex: 1;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  flex-direction: column;
+  padding: var(--padding-6xl) var(--padding-4xs) 0;
+  gap: 228px;
+}
+.analyticsChart {
+  width: 819px;
+  flex-direction: row;
+  padding: 0 var(--padding-5xs);
+}
+.overviewContent {
+  align-self: stretch;
+  flex-direction: column;
+  gap: var(--gap-19xl);
+  max-width: 100%;
+}
+.desktop3,
+.overviewContent,
+.overviewContentWrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.overviewContentWrapper {
+  width: 982px;
+  flex-direction: column;
+  padding: var(--padding-3xs) 0 0;
+  box-sizing: border-box;
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  color: var(--color-black);
+  font-family: var(--font-amiri);
+}
+.desktop3 {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-whitesmoke);
+  overflow: hidden;
+  flex-direction: row;
+  gap: var(--gap-3xs);
+  line-height: normal;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 1200px) {
+  .desktop3 {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .rectangleParent {
+    gap: 114px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .chartTitleWrapper {
+    flex-wrap: wrap;
+  }
+  .chartColumn {
+    min-width: 100%;
+  }
+  .chartColumns {
+    flex-wrap: wrap;
+  }
+  .chartContent {
+    padding-left: var(--padding-2xl);
+    padding-right: var(--padding-2xl);
+    box-sizing: border-box;
+  }
+  .overviewContent {
+    gap: var(--gap-lgi);
+  }
+}
+@media screen and (max-width: 450px) {
+  .quickOverview {
+    font-size: var(--font-size-lgi);
+  }
+  .timeLabels {
+    flex-wrap: wrap;
+  }
+  .chartContent {
+    padding-top: var(--padding-xl);
+    padding-bottom: var(--padding-11xl);
+    box-sizing: border-box;
+  }
+  .rectangleParent {
+    gap: 57px;
+  }
+}

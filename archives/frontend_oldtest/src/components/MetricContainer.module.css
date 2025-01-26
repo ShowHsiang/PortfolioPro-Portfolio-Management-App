@@ -1,0 +1,76 @@
+.dashboard,
+.element3Icon {
+  position: relative;
+  z-index: 1;
+}
+.element3Icon {
+  height: 24px;
+  width: 24px;
+}
+.dashboard {
+  text-decoration: none;
+  height: 18px;
+  color: inherit;
+  display: inline-block;
+  min-width: 80px;
+}
+.elementContainer,
+.elementDetails {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.elementDetails {
+  gap: var(--gap-sm);
+}
+.elementContainer {
+  padding: 0 0 0 var(--padding-8xs);
+}
+.barLineChartIcon {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.chartWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-12xs) 0 0;
+}
+.analytics {
+  text-decoration: none;
+  height: 18px;
+  position: relative;
+  color: inherit;
+  display: inline-block;
+  min-width: 66px;
+  z-index: 1;
+}
+.chartContainer {
+  flex-direction: row;
+  gap: var(--gap-lgi);
+}
+.chartContainer,
+.metricContainer,
+.metricWrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.metricWrapper {
+  flex-direction: column;
+  gap: var(--gap-23xl);
+}
+.metricContainer {
+  flex-direction: row;
+  padding: 0 var(--padding-mini);
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-white);
+  font-family: var(--font-amiri);
+}

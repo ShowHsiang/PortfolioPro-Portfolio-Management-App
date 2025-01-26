@@ -1,0 +1,62 @@
+.security,
+.shieldTickIcon {
+  position: relative;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.shieldTickIcon {
+  height: 24px;
+  width: 24.5px;
+  overflow: hidden;
+}
+.security {
+  text-decoration: none;
+  line-height: 18px;
+  color: inherit;
+  display: inline-block;
+  min-width: 60.2px;
+}
+.securityWrapper,
+.shieldTickParent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.securityWrapper {
+  flex-direction: column;
+  padding: var(--padding-12xs) 0 0;
+}
+.shieldTickParent {
+  flex-direction: row;
+  gap: var(--gap-3xl-5);
+}
+.helpCentre {
+  position: relative;
+  line-height: 18px;
+  display: inline-block;
+  min-width: 88.8px;
+  z-index: 1;
+}
+.helpCircleParent {
+  flex-direction: row;
+  gap: var(--gap-2xl-5);
+}
+.frameParent,
+.frameWrapper,
+.helpCircleParent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frameWrapper {
+  flex-direction: row;
+  padding: 0 0 0 var(--padding-12xs);
+}
+.frameParent {
+  flex-direction: column;
+  gap: var(--gap-16xl);
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-black);
+  font-family: var(--font-amiri);
+}

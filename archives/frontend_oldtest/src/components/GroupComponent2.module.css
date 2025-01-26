@@ -1,0 +1,300 @@
+.frameChild {
+  width: 374px;
+  height: 433px;
+  position: relative;
+  border-radius: var(--br-xl);
+  background-color: var(--color-gray-200);
+  display: none;
+  max-width: 100%;
+}
+.myCard {
+  height: 28px;
+  color: inherit;
+  min-width: 92px;
+}
+.balanceValue,
+.cardBalance,
+.myCard {
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.cardBalance {
+  height: 18px;
+  color: inherit;
+  min-width: 99px;
+}
+.balanceValue {
+  align-self: stretch;
+  height: 28px;
+  font-size: var(--font-size-5xl);
+  color: var(--color-white);
+}
+.cardDetails {
+  width: 154px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-xl) var(--padding-xs) 0;
+  box-sizing: border-box;
+  gap: var(--gap-9xs);
+  font-size: var(--font-size-base);
+  color: var(--color-lightslategray-100);
+}
+.card1Mask,
+.card1bg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin: 0 !important;
+}
+.card1bg {
+  top: -14px;
+  left: -9px;
+  border-radius: var(--br-xl);
+  background: linear-gradient(177.23deg, #9c2cf3, #3a6ff9);
+  z-index: 1;
+}
+.card1Mask {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  z-index: 2;
+}
+.currentBalance {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  z-index: 3;
+}
+.balanceLabel {
+  width: 134.4px;
+  height: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-12xs) 0 var(--padding-11xs);
+  box-sizing: border-box;
+}
+.currentBalance1 {
+  align-self: stretch;
+  height: 32px;
+  position: relative;
+  font-size: var(--font-size-9xl);
+  color: var(--color-white);
+  display: inline-block;
+  flex-shrink: 0;
+  z-index: 3;
+}
+.availableBalance {
+  width: 150.1px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-7xs);
+}
+.pendingAmount {
+  flex: 1;
+  position: relative;
+  letter-spacing: 0.5px;
+  line-height: 13px;
+  z-index: 3;
+}
+.balanceInfo,
+.pendingBalance {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.pendingBalance {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 0 0 var(--padding-11xs);
+  color: var(--color-gray-500);
+}
+.balanceInfo {
+  width: 172.8px;
+  flex-direction: column;
+  gap: var(--gap-43xl);
+}
+.mastercardLogoIcon {
+  width: 46.6px;
+  height: 35.9px;
+  position: relative;
+  z-index: 3;
+}
+.providerName {
+  width: 45.5px;
+  position: relative;
+  letter-spacing: 0.5px;
+  line-height: 13px;
+  display: inline-block;
+  z-index: 3;
+}
+.cardProvider {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-66xl-1);
+  text-align: right;
+  color: var(--color-white);
+}
+.cardBackground,
+.cardWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.cardBackground {
+  flex: 1;
+  align-items: flex-end;
+  padding: var(--padding-2xs) var(--padding-xl) var(--padding-20xl);
+  position: relative;
+  gap: var(--gap-27xl-6);
+}
+.cardWrapper {
+  align-self: stretch;
+  align-items: flex-start;
+  padding: 0 0 0 var(--padding-4xs);
+}
+.buttonBackgroundChild,
+.cardBalanceCircle {
+  position: absolute;
+  top: 0;
+  height: 6px;
+  z-index: 1;
+}
+.buttonBackgroundChild {
+  left: 0;
+  border-radius: var(--br-9xs);
+  background-color: var(--color-mediumslateblue);
+  width: 20px;
+}
+.cardBalanceCircle {
+  left: 24px;
+  border-radius: 50%;
+  background-color: var(--color-darkslateblue-200);
+  width: 6px;
+}
+.buttonBackground,
+.cardBalanceIndicator {
+  height: 6px;
+  width: 30px;
+  position: relative;
+}
+.cardBalanceIndicator {
+  width: 6px;
+  border-radius: 50%;
+  background-color: var(--color-darkslateblue-200);
+  z-index: 1;
+}
+.actionButtons,
+.manageCardButton {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.manageCardButton {
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+}
+.actionButtons {
+  width: 310px;
+  justify-content: center;
+  padding: 0 var(--padding-xl);
+  box-sizing: border-box;
+}
+.cardActionsLabels {
+  height: 48px;
+  flex: 1;
+  z-index: 1;
+}
+.cardActions1 {
+  align-self: stretch;
+  flex-direction: row;
+  gap: var(--gap-sm);
+}
+.cardActions,
+.cardActions1,
+.cardContainer,
+.cardVisual,
+.rectangleParent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.cardActions {
+  align-self: stretch;
+  flex-direction: column;
+  padding: 0 var(--padding-4xs) 0 0;
+  gap: var(--gap-sm);
+}
+.cardContainer,
+.cardVisual,
+.rectangleParent {
+  max-width: 100%;
+}
+.cardContainer {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-11xs);
+}
+.cardVisual,
+.rectangleParent {
+  box-sizing: border-box;
+}
+.cardVisual {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 0 0 var(--padding-12xs);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-400);
+}
+.rectangleParent {
+  border-radius: var(--br-xl);
+  background-color: var(--color-gray-200);
+  flex-direction: column;
+  padding: var(--padding-lgi) var(--padding-mini) var(--padding-7xl)
+    var(--padding-4xl);
+  gap: var(--gap-3xl);
+  min-width: 374px;
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  color: var(--color-white);
+  font-family: var(--font-amiri);
+}
+@media screen and (max-width: 1025px) {
+  .rectangleParent {
+    flex: 1;
+  }
+}
+@media screen and (max-width: 450px) {
+  .balanceValue,
+  .myCard {
+    font-size: var(--font-size-lgi);
+  }
+  .currentBalance1 {
+    font-size: var(--font-size-3xl);
+  }
+  .cardBackground {
+    gap: var(--gap-4xl);
+  }
+  .rectangleParent {
+    padding-top: var(--padding-xl);
+    padding-bottom: var(--padding-xl);
+    box-sizing: border-box;
+    min-width: 100%;
+  }
+}

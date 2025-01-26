@@ -1,0 +1,84 @@
+/* Apply a full height and flex layout to the page container */
+.page-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Style the NaviBar to be on the left side */
+.navi-bar {
+    width: 18%; /* Adjust width as needed */
+    background-color: #f4f4f4;
+    border-right: 1px solid #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow: auto;
+}
+
+/* Main content layout */
+.main-content {
+    /* display: flex; */
+    margin-left: 18%;
+    /* flex-direction: column; */
+    overflow-y: auto;
+    height: 100vh;
+    width: calc(82% - 20px);
+    margin-right: auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Divide the main content into three rows */
+.row {
+    flex: 1;
+    display: flex;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+/* Remove the margin for the last row */
+.row:last-child {
+    margin-bottom: 0;
+}
+
+/* First row: QuickOverview and ProfitChart side by side */
+.first-row {
+    display: flex;
+    flex: 1;
+    gap: 16px;
+    /* height: calc(33.33% - 16px); */
+}
+
+.quick-overview,
+.profit-chart {
+    flex: 1;
+    background-color: #ffffff; /* Optional */
+    border: 1px solid #ccc; /* Optional */
+    border-radius: 8px; /* Optional */
+    padding: 8px; /* Optional */
+    height: 100%;
+    display: flex; /* Flex to align content properly */
+    flex-direction: column; /* Align content within each container */
+    justify-content: center; /* Center content vertically */
+}
+
+.quick-overview {
+    background: none; /* 删除重复背景 */
+    border: none; /* 删除重复边框 */
+    box-shadow: none; /* 删除重复阴影 */
+    margin: 0; /* 去除可能的外边距 */
+    padding: 0; /* 去除可能的内边距 */
+}
+
+/* Second and third rows */
+.holding-list,
+.transaction-table {
+    width: 100%;
+    background-color: #ffffff; /* Optional */
+    border: 1px solid #ccc; /* Optional */
+    border-radius: 8px; /* Optional */
+    padding: 8px; /* Optional */
+}
+

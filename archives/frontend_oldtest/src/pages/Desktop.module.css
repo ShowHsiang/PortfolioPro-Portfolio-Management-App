@@ -1,0 +1,67 @@
+.transactions {
+  align-self: stretch;
+  flex-direction: row;
+  max-width: 100%;
+  row-gap: 20px;
+}
+.balance,
+.balanceDetails,
+.desktop1,
+.transactions {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.balanceDetails {
+  flex: 1;
+  flex-direction: column;
+  padding: var(--padding-7xs) 0 0;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.balance,
+.desktop1 {
+  flex-direction: row;
+}
+.balance {
+  flex: 1;
+  gap: 104px;
+  min-width: 728px;
+  max-width: 100%;
+}
+.desktop1 {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  overflow: hidden;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 0;
+  line-height: normal;
+  letter-spacing: normal;
+  row-gap: 20px;
+}
+@media screen and (max-width: 1125px) {
+  .balance {
+    gap: 52px;
+  }
+}
+@media screen and (max-width: 1025px) {
+  .balance {
+    flex-wrap: wrap;
+    min-width: 100%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .transactions {
+    flex-wrap: wrap;
+  }
+  .balance {
+    gap: var(--gap-7xl);
+  }
+}
+@media screen and (max-width: 450px) {
+  .balanceDetails {
+    min-width: 100%;
+  }
+}

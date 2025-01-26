@@ -1,0 +1,377 @@
+.button {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: -1px;
+  bottom: -1px;
+  left: 0;
+  border-radius: var(--br-11xs);
+  border: 1px solid var(--color-firebrick-100);
+  box-sizing: border-box;
+  opacity: 0.28;
+}
+.playNow {
+  flex: 1;
+  position: relative;
+  letter-spacing: 1.6px;
+  line-height: 15px;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: inline-block;
+  min-width: 94px;
+  z-index: 1;
+}
+.bigButton,
+.bigButtonWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.bigButton {
+  flex: 1;
+  padding: var(--padding-3xl) var(--padding-44xl) var(--padding-4xl)
+    var(--padding-45xl);
+  position: relative;
+}
+.bigButtonWrapper {
+  padding: 0 var(--padding-329xl);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.editorsPicks {
+  position: relative;
+  font-weight: 600;
+  display: inline-block;
+  min-width: 121px;
+}
+.editorPickThreeIconImage {
+  width: 16px;
+  height: 16px;
+  position: relative;
+}
+.editorPickIconThree,
+.editorsPicksParent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-8xs) 0 0;
+}
+.editorsPicksParent {
+  flex-direction: row;
+  padding: 0 var(--padding-xl) 0 0;
+  gap: var(--gap-sm);
+}
+.maskGroupIcon {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.bottomIconOne {
+  height: 16px;
+  width: 18px;
+  position: relative;
+  z-index: 1;
+}
+.bottomIconDivider {
+  position: relative;
+  line-height: 165%;
+  font-weight: 500;
+  display: inline-block;
+  min-width: 14px;
+  z-index: 1;
+}
+.bottomIconPairOne,
+.bottomIconPairTwo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-11xs) 0 0;
+}
+.bottomIconPairOne {
+  flex-direction: row;
+  padding: 0 var(--padding-lg) 0 0;
+  gap: var(--gap-6xs);
+}
+.div,
+.vectorIcon {
+  position: relative;
+  z-index: 1;
+}
+.vectorIcon {
+  height: 16px;
+  width: 13px;
+}
+.div {
+  line-height: 165%;
+  font-weight: 500;
+  display: inline-block;
+  min-width: 13px;
+}
+.bottomIconPairOne1 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-6xs);
+}
+.placeholderIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-11xs);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.corona {
+  position: absolute;
+  top: 2px;
+  left: 16px;
+  line-height: 165%;
+  text-transform: uppercase;
+  display: inline-block;
+  width: 57px;
+  height: 19px;
+  min-width: 57px;
+  z-index: 2;
+}
+.placeholderContainer {
+  align-self: stretch;
+  height: 22px;
+  position: relative;
+}
+.bottomPlaceholderIcon {
+  height: 16px;
+  width: 10px;
+  position: relative;
+  z-index: 1;
+}
+.bottomPlaceholder,
+.placeholderContainerParent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.bottomPlaceholder {
+  flex-direction: row;
+  padding: 0 var(--padding-lg);
+}
+.placeholderContainerParent {
+  width: 78px;
+  flex-shrink: 0;
+  flex-direction: column;
+  gap: var(--gap-88xl);
+  text-align: center;
+  font-size: var(--font-size-xs);
+  color: var(--color-white);
+}
+.maskGroupParent {
+  overflow-x: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: var(--padding-3xs) var(--padding-3xs) var(--padding-mini)
+    var(--padding-53xl);
+  position: relative;
+  gap: var(--gap-xs);
+  font-size: var(--font-size-3xs);
+  color: var(--color-gray-1300);
+}
+.editorPickContainerInner,
+.frameGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.frameGroup {
+  justify-content: flex-start;
+  gap: var(--gap-3xl);
+  flex-shrink: 0;
+}
+.editorPickContainerInner {
+  justify-content: flex-end;
+  padding: 0 0 var(--padding-15xl);
+  font-family: var(--font-poppins);
+}
+.serologicalSurveysAre {
+  align-self: stretch;
+  position: relative;
+  line-height: 27px;
+}
+.theAuthoritiesAre {
+  width: 380px;
+  position: relative;
+  font-size: var(--font-size-base);
+  line-height: 163.41%;
+  font-family: var(--font-nunito-sans);
+  display: inline-block;
+  white-space: nowrap;
+  max-width: 100%;
+}
+.serologicalContent,
+.serologicalSurveysAreBeingParent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.serologicalSurveysAreBeingParent {
+  align-self: stretch;
+  height: 155px;
+  gap: var(--gap-base);
+}
+.serologicalContent {
+  flex: 1;
+  padding: var(--padding-6xs) 0 0;
+  box-sizing: border-box;
+  min-width: 247px;
+}
+.maskGroupIcon1 {
+  height: 170px;
+  width: 272px;
+  position: relative;
+  object-fit: cover;
+}
+.serologicalContainerTwo {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-13xl);
+  max-width: 100%;
+}
+.serologicalIconChild {
+  height: 4px;
+  width: 121px;
+  position: relative;
+}
+.serologicalIcon {
+  width: 575px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 var(--padding-xl);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.serologicalContainerTwoParent {
+  width: 684px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-11xl);
+  flex-shrink: 0;
+  max-width: 100%;
+}
+.beatingSomeOf {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--font-size-base);
+  line-height: 163.41%;
+  font-family: var(--font-nunito-sans);
+  white-space: nowrap;
+}
+.markContainer,
+.markContainerWrapper {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.markContainer {
+  align-self: stretch;
+  height: 155px;
+  display: flex;
+  justify-content: flex-start;
+  gap: var(--gap-base);
+  flex-shrink: 0;
+}
+.markContainerWrapper {
+  width: 380px;
+  padding: 0 0 var(--padding-23xl);
+  box-sizing: border-box;
+}
+.editorPickContainer,
+.frameParent,
+.markContainerWrapper {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.editorPickContainer {
+  align-self: stretch;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: var(--gap-mini);
+  text-align: left;
+  font-size: var(--font-size-lg);
+  color: var(--text);
+  font-family: var(--font-ibm-plex-serif);
+}
+.frameParent {
+  width: 1249px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 0 0 var(--padding-xl);
+  box-sizing: border-box;
+  gap: var(--gap-41xl);
+  flex-shrink: 0;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-firebrick-100);
+  font-family: var(--font-poppins);
+}
+@media screen and (max-width: 1325px) {
+  .editorPickContainer {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 1125px) {
+  .bigButtonWrapper {
+    padding-left: var(--padding-155xl);
+    padding-right: var(--padding-155xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 800px) {
+  .maskGroupIcon1 {
+    flex: 1;
+  }
+  .serologicalContainerTwo {
+    gap: var(--gap-base);
+    flex-wrap: wrap;
+  }
+  .frameParent {
+    gap: var(--gap-11xl);
+  }
+}
+@media screen and (max-width: 450px) {
+  .bigButtonWrapper {
+    padding-left: var(--padding-68xl);
+    padding-right: var(--padding-68xl);
+    box-sizing: border-box;
+  }
+  .maskGroupParent {
+    padding-left: var(--padding-xl);
+    box-sizing: border-box;
+  }
+}
